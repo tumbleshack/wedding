@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+// Variables
+$base-font-family: 'Josefin Sans', sans-serif;
+$base-font-size:   20px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.75;
+$base-line-height: 1.5;
+
+$spacing-unit:     1.5rem;
+
+$dark-color:      #111;
+$light-color:     #fdfdfd;
+
+$grey-color:       #828282;
+
+// Breakpoints
+$bp-small:    640px;
+$bp-medium:    768px;
+
+// Width of the content area
+$content-width:    1024px;
+
+@mixin mq($resolution) {
+    @media screen and (min-width: $resolution) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+    // Utils
+    "utils/visually-hidden",
+    // Scaffolding
+    "milligram",
+    "base",
+    "layout",
+    "header",
+    "footer",
+    // Components
+    "components/primary-nav"
+;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>I&#39;m a Front End Developer - based in London, England.
+</description>
+    <link>https://www.barrymcgee.co.uk/</link>
+    <atom:link href="https://www.barrymcgee.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 07 Mar 2016 13:14:51 +0000</pubDate>
+    <lastBuildDate>Mon, 07 Mar 2016 13:14:51 +0000</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+  </channel>
+</rss>

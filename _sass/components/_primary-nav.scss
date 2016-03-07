@@ -1,0 +1,203 @@
+// Default primary nav behaviour
+.primary-nav {
+  background: $grey-color;
+  color: $light-color;
+  width: 100%;
+  padding: 3rem 1rem 3rem;
+  margin: 2rem -2rem;
+
+  &__label {
+    @include visuallyhidden;
+  }
+
+  &__item {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $light-color;
+      border-bottom: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .link-arrow {
+      position: relative;
+      top: 2px;
+    }
+
+    .is-selected {
+      color: $grey-color;
+    }
+  }
+}
+
+// Default large screen
+@include mq($bp-small) {
+
+  .nav-wrap {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .primary-nav-wrap {
+    max-height: 100%;
+  }
+
+  .primary-nav {
+    background: none;
+    margin-top: 0;
+
+    &__item {
+      display: inline-block;
+      width: auto;
+      margin-right: 2rem;
+
+      a {
+        color: $dark-color;
+        border-bottom: 3px solid $light-color;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .link-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+// JS enhanced menu
+
+.primary-nav-wrap {
+  max-height: 0;
+  transition: all 1s;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+
+.js-primary-nav {
+  padding: 3rem 1rem 3rem;
+  margin: 0;
+}
+
+.js-nav-active {
+
+  .primary-nav-wrap {
+    max-height: 100%;
+  }
+}
+
+.nav-wrap {
+  position: relative;
+}
+
+.nav-icon {
+  position: absolute;
+  top: -0.35rem;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+  padding: 0 1rem;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  &__wrap {
+    position: relative;
+    top: 1.25rem;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $grey-color;
+    border-radius: 5px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    margin: auto;
+    display: inline-block;
+    z-index: 1;
+
+    &:nth-child(1) {
+     top: 0px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+     top: 9px;
+    }
+
+    &:nth-child(4) {
+     top: 18px;
+    }
+  }
+}
+
+.nav-icon.open span {
+  background-color: $light-color;
+}
+
+.nav-icon.open span:nth-child(1) {
+ top: 18px;
+ width: 0%;
+ left: 50%;
+}
+
+.nav-icon.open span:nth-child(2) {
+ transform: rotate(45deg);
+}
+
+.nav-icon.open span:nth-child(3) {
+ transform: rotate(-45deg);
+}
+
+.nav-icon.open span:nth-child(4) {
+ top: 18px;
+ width: 0%;
+ left: 50%;
+}
+
+// Js enhanced large screen
+@include mq($bp-small) {
+
+  .js-nav-trigger {
+    display: none;
+  }
+
+  .primary-nav-wrap {
+    max-height: 100%;
+    position: relative;
+
+    .primary-nav {
+      padding-right: 0;
+
+      &__item {
+        text-align: right;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+}

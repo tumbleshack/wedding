@@ -1,0 +1,38 @@
+.header {
+  border-bottom: 1px dotted $grey-color;
+  padding: 0 0 $spacing-unit*3;
+  margin: $spacing-unit*1.5 0 $spacing-unit*3;
+  width: 100%;
+  position: relative;
+
+  &__link {
+    border: 0;
+    color: $dark-color;
+
+    &:hover {
+      border: 0;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  &__strap {
+    display: block;
+    font-size: 2.4rem;
+    color: $grey-color;
+  }
+
+  @include mq($bp-small) {
+
+    margin-top: 5rem;
+    padding-bottom: 0;
+
+    .column:first-child {
+      padding-left: 0;
+    }
+  }
+}
