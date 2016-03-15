@@ -10,7 +10,7 @@
   <meta name="description" content="Barry &amp; Gillian's Wedding | 29.09.16">
 
   <!-- Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Parisienne|Slabo+27px' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://www.barrymcgee.co.uk/">
@@ -20,8 +20,6 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Prefetching -->
-  
-    <link rel="prefetch" href="/contact/" />
   
     <link rel="prefetch" href="/feed.xml" />
   
@@ -52,25 +50,26 @@
       <span class="primary-nav__label">Main Menu:</span>
 
       <div class="nav-wrap">
-        
-        
-          
+
           <div class="primary-nav__item">
-
-            
-              <a href="/contact/">Contact</a>
+              <a href="#schedule">Schedule</a>
               <span class="link-arrow">&rarr;</span>
-            
-
           </div>
-          
-        
-          
-        
-          
-        
-          
-        
+
+          <div class="primary-nav__item">
+              <a href="#location">Location</a>
+              <span class="link-arrow">&rarr;</span>
+          </div>
+
+          <div class="primary-nav__item">
+              <a href="#accomodation">Accomodation</a>
+              <span class="link-arrow">&rarr;</span>
+          </div>
+
+          <div class="primary-nav__item">
+              <a href="#rsvp">RSVP</a>
+              <span class="link-arrow">&rarr;</span>
+          </div>
       </div>
     </nav>
   </div>
@@ -87,16 +86,87 @@
 
 
       <div class="wrapper">
-        <h1>Hello - we're getting married!</h1>
+        <!-- hero intro -->
+<section>
+    <h2>Hello - we're getting married!</h2>
+    <p>We’re getting married on Thursday 29th Sept in Darver Castle, Ireland.</p>
+</section>
 
-<p></p>
+<!-- schedule -->
+<section id="schedule">
+    <h2>What time is the dinner?</h2>
+    <dl>
+        <dt>3pm</dt>
+            <dd>Ceremony</dd>
+
+        <dt>4pm</dt>
+            <dd>Pre-dinner drinks</dd>
+
+        <dt>5.30pm</dt>
+            <dd>Wedding Breakfast</dd>
+
+        <dt>6.30pm</dt>
+            <dd>Speeches</dd>
+
+        <dt>7.30pm</dt>
+            <dd>Cèilidh with Craddóg</dd>
+
+        <dt>10pm</dt>
+            <dd>Evening supper</dd>
+
+        <dt>11pm - Bedtime</dt>
+            <dd><a href="https://www.youtube.com/watch?v=YJqgFHz_chU">DJ Tommy K</a></dd>
+    </dl>
+</section>
+
+<!-- location -->
+<section id="location">
+    <h2>Where is that place anyway?</h2>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.332583165201!2d-6.471940683869006!3d53.92583498010449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4860cadef178ae9f%3A0xaec6ef90c66d7159!2sDarver+Castle!5e0!3m2!1sen!2suk!4v1457560104908" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
+
+<!-- accomodation -->
+<section id="accomodation">
+    <h2>Where am I gonna sleep?</h2>
+    <p>There is limited accommodation available for our guests in two self catering cottages across the road from Darver Castle.</p>
+
+    <p>Alternatively, Darver Castle offer a shuttle service from the <a href="http://www.cpireland.crowneplaza.com/dundalk/">Crown Plaza in Dundalk</a> approximately 5 miles away.
+    </p>
+</section>
+
+<!-- rsvp -->
+<section id="rsvp">
+    <h2>Sold! Where do we sign?</h2>
+
+    <form>
+      <fieldset>
+        <label for="nameField">Your name</label>
+        <input type="text" placeholder="Joe Soap" id="nameField">
+
+        <label for="surNameField">Your guests name</label>
+        <input type="text" placeholder="Jemma Soap" id="surNameField">
+
+        <label for="ageRangeField">I'm coming in the...</label>
+        <select id="ageRangeField">
+          <option value="morning">Afternoon</option>
+          <option value="evening">Evening</option>
+        </select>
+        <label for="commentField">Comment</label>
+        <textarea placeholder="I don't like cabbage..." id="commentField"></textarea>
+        <input class="button-primary" type="submit" value="Stick in the post">
+      </fieldset>
+    </form>
+
+</section>
 
       </div>
 
     <footer class="footer row">
 
-  <div class="column">
-    <p>Crafted with ♥ by us in 2016 - <a href="https://github.com/barrymcgee/bmg-co-uk">View the source</a></p>
+  <div class="column column-2">
+    <p>Crafted with ♥ by us in 2016</p>
+    <p>#b&amp;gwed</p>
   </div>
 
 </footer>

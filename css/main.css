@@ -653,9 +653,9 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 20px / 1.5 "Josefin Sans", sans-serif;
-  color: #111;
-  background-color: #fdfdfd;
+  font: 400 20px / 1.5 "Slabo 27px", serif;
+  color: #fdfdfd;
+  background-color: #3b4654;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -663,7 +663,12 @@ body {
   font-feature-settings: "kern" 1;
   -webkit-font-kerning: normal;
      -moz-font-kerning: normal;
-          font-kerning: normal; }
+          font-kerning: normal;
+  -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Parisienne", cursive;
+  text-align: center; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -672,6 +677,12 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure {
   margin-bottom: 0.75rem; }
+
+/**
+ * Sections
+ */
+section {
+  margin: 6rem 0; }
 
 /**
  * Images
@@ -713,14 +724,14 @@ p {
   margin-bottom: 1.5rem; }
 
 a {
+  color: #FFDAD4;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-bottom: 3px solid #fdfdfd;
   -webkit-transition: .75s all;
   transition: .75s all; }
 
 .container {
-  max-width: 1024px;
+  max-width: 640px;
   margin: auto; }
 
 .header {
@@ -730,8 +741,7 @@ a {
   width: 100%;
   position: relative; }
   .header__link {
-    border: 0;
-    color: #111; }
+    border: 0; }
     .header__link:hover {
       border: 0; }
   .header__title {
@@ -807,11 +817,8 @@ a {
       display: inline-block;
       width: auto;
       margin-right: 2rem; }
-      .primary-nav__item a {
-        color: #111;
-        border-bottom: 3px solid #fdfdfd; }
-        .primary-nav__item a:hover {
-          text-decoration: none; }
+      .primary-nav__item a:hover {
+        text-decoration: none; }
       .primary-nav__item .link-arrow {
         display: none; } }
 

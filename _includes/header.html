@@ -13,21 +13,26 @@
       <span class="primary-nav__label">Main Menu:</span>
 
       <div class="nav-wrap">
-        {% assign url = page.url|remove:'index.html' %}
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
+
           <div class="primary-nav__item">
-
-            {% if url == my_page.url %}
-              <span class="is-selected">{{ my_page.title }}</span>
-            {% else %}
-              <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+              <a href="#schedule">Schedule</a>
               <span class="link-arrow">&rarr;</span>
-            {% endif %}
-
           </div>
-          {% endif %}
-        {% endfor %}
+
+          <div class="primary-nav__item">
+              <a href="#location">Location</a>
+              <span class="link-arrow">&rarr;</span>
+          </div>
+
+          <div class="primary-nav__item">
+              <a href="#accomodation">Accomodation</a>
+              <span class="link-arrow">&rarr;</span>
+          </div>
+
+          <div class="primary-nav__item">
+              <a href="#rsvp">RSVP</a>
+              <span class="link-arrow">&rarr;</span>
+          </div>
       </div>
     </nav>
   </div>
