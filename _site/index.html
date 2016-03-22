@@ -92,32 +92,95 @@
     <p>We’re getting married on Thursday 29th Sept in Darver Castle, Ireland.</p>
 </section>
 
-<!-- schedule -->
-<section id="schedule">
-    <h2>What time is the dinner?</h2>
-    <dl>
-        <dt>3pm</dt>
-            <dd>Ceremony</dd>
 
-        <dt>4pm</dt>
-            <dd>Pre-dinner drinks</dd>
+<section id="cd-timeline" class="cd-container">
 
-        <dt>5.30pm</dt>
-            <dd>Wedding Breakfast</dd>
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline-img -->
 
-        <dt>6.30pm</dt>
-            <dd>Speeches</dd>
+        <div class="cd-timeline-content">
+            <h2>The Ceremony</h2>
+            <p>Our wedding will be performed in the Cermeony Room in the grounds of Darver Castle.</p>
+            <span class="cd-date">3pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
 
-        <dt>7.30pm</dt>
-            <dd>Cèilidh with Craddóg</dd>
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+        </div> <!-- cd-timeline-img -->
 
-        <dt>10pm</dt>
-            <dd>Evening supper</dd>
+        <div class="cd-timeline-content">
+            <h2>Pre-dinner drinks</h2>
+            <p>Wet your whistle in the Castle drawing room while we say cheese in the garden.</p>
+            <span class="cd-date">4pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
 
-        <dt>11pm - Bedtime</dt>
-            <dd><a href="https://www.youtube.com/watch?v=YJqgFHz_chU">DJ Tommy K</a></dd>
-    </dl>
-</section>
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>Dinner</h2>
+            <p>Dinner will be served in the Castle ballroom. Please shout if you're violently allergic to anything.</p>
+            <span class="cd-date">5pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>Speeches</h2>
+            <p>Some people will say some words - we'll try and keep them brief!</p>
+            <span class="cd-date">7.30pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>Cèilidh</h2>
+            <p>Some people will say some words - we'll try and keep them brief!</p>
+            <span class="cd-date">8.30pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>Supper</h2>
+            <p>Some people will say some words - we'll try and keep them brief!</p>
+            <span class="cd-date">10pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>DJ Tommy K</h2>
+            <p>Some people will say some words - we'll try and keep them brief!</p>
+            <span class="cd-date">11pm</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+
+</section> <!-- cd-timeline -->
 
 <!-- location -->
 <section id="location">
@@ -171,6 +234,8 @@
 
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 <script>
 (function() {
 
@@ -196,6 +261,27 @@
   }, false);
 
 })();
+
+// timeline
+jQuery(document).ready(function($){
+  var $timeline_block = $('.cd-timeline-block');
+
+  //hide timeline blocks which are outside the viewport
+  $timeline_block.each(function(){
+    if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+      $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+    }
+  });
+
+  //on scolling, show/animate timeline blocks when enter the viewport
+  $(window).on('scroll', function(){
+    $timeline_block.each(function(){
+      if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+        $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+      }
+    });
+  });
+});
 
 
 // Google Analytics

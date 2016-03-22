@@ -1,7 +1,7 @@
 {
-  "name": "barrymcgee.co.uk",
+  "name": "barryandgillian.wedding",
   "version": "1.0.0",
-  "description": "Codebase for http://www.barrymcgee.co.uk",
+  "description": "Codebase for https://barryandgillian.wedding",
   "main": "_site/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,21 +14,21 @@
     "barry",
     "mcgee"
   ],
-  "author": "Barry McGee <hello@barrymcgee.co.uk>",
+  "author": "Barry McGee <barry.mcgee@integralcode.co.uk>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/barrymcgee/barryandgillian.wedding/issues"
   },
-  "homepage": "https://www.barrymcgee.co.uk",
+  "homepage": "https://barryandgillian.wedding",
   "dependencies": {
-    "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-sass": "^2.1.1",
-    "gulp-sourcemaps": "^1.6.0",
     "npm": "^3.5.3"
   },
   "devDependencies": {
-    "gulp-gh-pages": "^0.5.4"
+    "gulp-gh-pages": "^0.5.4",
+    "browser-sync": "^2.11.1",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
