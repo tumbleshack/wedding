@@ -125,7 +125,7 @@
     position: absolute;
     height: 3px;
     width: 100%;
-    background: $grey-color;
+    background: $light-color;
     border-radius: 5px;
     opacity: 1;
     left: 0;
@@ -187,6 +187,7 @@
 
     .primary-nav {
       padding-right: 0;
+      padding-top: 1rem;
 
       &__item {
         text-align: right;

@@ -12,7 +12,7 @@ email: hello@barrymcgee.co.uk
 description: > # this means to ignore newlines until "baseurl:"
   I'm a Front End Developer - based in London, England.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.barrymcgee.co.uk" # the base hostname & protocol for your site
+url: "http://barryandgillian.wedding/" # the base hostname & protocol for your site
 twitter_username: barrymcgee
 github_username:  barrymcgee
 

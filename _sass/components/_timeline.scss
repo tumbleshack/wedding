@@ -1,13 +1,3 @@
-// variables - colors
-$main-text: #7f8c97; // main text
-$link: #acb7c0; // anchor tags
-$background: #e9f0f5; // body background color
-$color-1: #303e49; // blue dark
-$color-2: #c03b44; // red
-$color-3: #ffffff; // white
-$color-4: #75ce66; // green
-$color-5: #f0ca45; // yellow
-
 @function calculateRem($size) {
     $remSize: $size / 16px;
     @return $remSize * 1rem;
@@ -80,7 +70,7 @@ Main components
         left: 18px;
         height: 100%;
         width: 4px;
-        background: darken($background, 5%);
+        background: darken($light-color, 5%);
     }
     @include MQ(L) {
         margin: 3rem 0;
@@ -117,7 +107,8 @@ Main components
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
+    background: $light-color;
+
     img {
         display: block;
         width: 24px;
@@ -128,15 +119,7 @@ Main components
         margin-left: -12px;
         margin-top: -12px;
     }
-    &.cd-picture {
-        background: $color-4;
-    }
-    &.cd-movie {
-        background: $color-2;
-    }
-    &.cd-location {
-        background: $color-5;
-    }
+
     @include MQ(L) {
         width: 60px;
         height: 60px;
@@ -191,11 +174,11 @@ Main components
         margin-left: 0;
         padding: 1.6em;
         width: 45%;
+
         &::before {
             top: 24px;
             left: 100%;
             border-color: transparent;
-            border-left-color: $color-3;
         }
         .cd-read-more {
             float: left;
@@ -203,8 +186,8 @@ Main components
         .cd-date {
             position: absolute;
             width: 100%;
-            left: 122%;
-            top: 6px;
+            left: 130%;
+            top: 0;
         }
         .cd-timeline-block:nth-child(even) & {
             float: right;
@@ -213,15 +196,14 @@ Main components
                 left: auto;
                 right: 100%;
                 border-color: transparent;
-                border-right-color: $color-3;
             }
             .cd-read-more {
                 float: right;
             }
             .cd-date {
                 left: auto;
-                right: 122%;
-                text-align: right;
+                right: 130%;
+                text-align: centre;
             }
         }
         .cssanimations &.is-hidden {
