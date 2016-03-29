@@ -1,4 +1,29 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: $content-width;
   margin: auto;
+}
+
+.section__header {
+  margin-bottom: 3rem;
+}
+
+.for-large {
+  display: none;
+}
+
+
+@include mq($bp-medium) {
+
+  .for-small {
+    display: none;
+  }
+
+  .for-large {
+    display: block;
+  }
 }

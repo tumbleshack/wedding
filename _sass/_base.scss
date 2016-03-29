@@ -107,4 +107,9 @@ p {
     color: $highlight-color;
     box-sizing: border-box;
     transition: .75s all;
+
+    &:hover {
+        color: darken($highlight-color, 10%);
+        border-bottom: 1px dotted darken($highlight-color, 10%);
+    }
  }

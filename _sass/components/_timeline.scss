@@ -13,6 +13,21 @@
     border-radius: $radius;
 }
 
+// keyframes
+@keyframes(cd-bounce-1) {
+    0% {
+        opacity: 0;
+        transform: scale 0.5;
+    }
+    60% {
+        opacity: 1;
+        transform: scale 1.2;
+    }
+    100% {
+        transform: scale 1;
+    }
+}
+
 // layout - breakpoints
 $S: 320px;
 $M: 768px;
@@ -45,7 +60,8 @@ Modules - reusable parts of our design
     /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
     width: 90%;
     max-width: $L; // breakpoints inside partials > _layout.scss
-    margin: 0 auto;
+    margin: 10rem auto;
+
     &::after {
         /* clearfix */
         content: '';
@@ -58,10 +74,57 @@ Modules - reusable parts of our design
 Main components
 
 -------------------------------- */
-#cd-timeline {
+
+.cd-date {
+    display: block;
+    float: none;
+    width: 100%;
+    font-size: 26px;
+
+    @include MQ(L) {
+        font-size: 30px;
+    }
+}
+
+.cd-container {
+    position: relative;
+
+    &::before {
+        content: " ";
+        width: 20px;
+        height: 4px;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        background: darken($light-color, 5%);
+
+        @include MQ(L) {
+            left: 50%;
+            margin-left: -10px;
+        }
+    }
+
+    &::after {
+        content: " ";
+        width: 20px;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 9px;
+        background: darken($light-color, 5%);
+
+        @include MQ(L) {
+            left: 50%;
+            margin-left: -10px;
+        }
+    }
+}
+
+.cd-timeline {
     position: relative;
     padding: 2rem 0;
     margin: 2rem 0;
+
     &::before {
         /* this is the vertical line */
         content: '';
@@ -82,8 +145,9 @@ Main components
 }
 .cd-timeline-block {
     position: relative;
-    margin: 2em 0;
+    margin: 2em;
     @extend .clearfix;
+
     &:first-child {
         margin-top: 0;
     }
@@ -91,7 +155,8 @@ Main components
         margin-bottom: 0;
     }
     @include MQ(L) {
-        margin: 4rem 0;
+        margin: 14rem 0;
+
         &:first-child {
             margin-top: 0;
         }
@@ -102,12 +167,12 @@ Main components
 }
 .cd-timeline-img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: -36px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: $light-color;
+    background: darken($light-color, 50%);
 
     img {
         display: block;
@@ -128,6 +193,7 @@ Main components
         /* Force Hardware Acceleration in WebKit */
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;
+
         .cssanimations &.is-hidden {
             visibility: hidden;
         }
@@ -137,42 +203,28 @@ Main components
         }
     }
 }
-@keyframes(cd-bounce-1) {
-    0% {
-        opacity: 0;
-        transform: scale 0.5;
-    }
-    60% {
-        opacity: 1;
-        transform: scale 1.2;
-    }
-    100% {
-        transform: scale 1;
-    }
-}
+
 .cd-timeline-content {
+    @extend .clearfix;
     position: relative;
     margin-left: 60px;
     padding: 1em;
-    @extend .clearfix;
+    text-align: center;
 
-    .cd-read-more,
-    .cd-date {
-        display: inline-block;
-    }
     p {
         margin: 1em 0;
         line-height: 1.6;
     }
     .cd-date {
         float: left;
-        padding: 0.8em 0;
+        padding: 0 0 0.8em;
         opacity: 0.7;
     }
 
     @include MQ(L) {
+
         margin-left: 0;
-        padding: 1.6em;
+        padding: 0 0 0 1.5em;
         width: 45%;
 
         &::before {
@@ -180,6 +232,12 @@ Main components
             left: 100%;
             border-color: transparent;
         }
+
+        &:nth-child(2) {
+            padding: 0 0 0 1.5em;
+        }
+
+
         .cd-read-more {
             float: left;
         }
@@ -191,6 +249,7 @@ Main components
         }
         .cd-timeline-block:nth-child(even) & {
             float: right;
+
             &::before {
                 top: 24px;
                 left: auto;

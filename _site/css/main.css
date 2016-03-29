@@ -653,7 +653,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 20px / 1.5 "Slabo 27px", serif;
+  font: 300 18px / 1.5 "Lato", sans-serif;
   color: #fdfdfd;
   background-color: #3b4654;
   -webkit-text-size-adjust: 100%;
@@ -698,7 +698,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 15px; }
+  font-size: 13.5px; }
 
 /**
  * Lists
@@ -715,7 +715,7 @@ li > ol {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+  font-weight: 300; }
 
 /**
  * Default Paragraph styling
@@ -724,15 +724,34 @@ p {
   margin-bottom: 1.5rem; }
 
 a {
-  color: #FFDAD4;
+  color: #CB99C9;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: .75s all;
   transition: .75s all; }
+  a:hover {
+    color: #ba77b7;
+    border-bottom: 1px dotted #ba77b7; }
+
+html,
+body {
+  overflow-x: hidden; }
 
 .container {
   max-width: 640px;
   margin: auto; }
+
+.section__header {
+  margin-bottom: 3rem; }
+
+.for-large {
+  display: none; }
+
+@media screen and (min-width: 768px) {
+  .for-small {
+    display: none; }
+  .for-large {
+    display: block; } }
 
 .header {
   border-bottom: 1px dotted #828282;
@@ -761,7 +780,7 @@ a {
 
 .footer {
   border-top: 1px dotted #828282;
-  font-size: 15px;
+  font-size: 13.5px;
   padding-top: 4.5rem;
   margin: 4.5rem 0 4.5rem; }
 
@@ -921,96 +940,6 @@ a {
         .primary-nav-wrap .primary-nav__item:last-child {
           margin-right: 0; } }
 
-/* --------------------------------
-
-Modules - reusable parts of our design
-
--------------------------------- */
-.cd-container {
-  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
-  max-width: 1170px;
-  margin: 0 auto; }
-  .cd-container::after {
-    /* clearfix */
-    content: '';
-    display: table;
-    clear: both; }
-
-/* --------------------------------
-
-Main components
-
--------------------------------- */
-#cd-timeline {
-  position: relative;
-  padding: 2rem 0;
-  margin: 2rem 0; }
-  #cd-timeline::before {
-    /* this is the vertical line */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 18px;
-    height: 100%;
-    width: 4px;
-    background: #f0f0f0; }
-  @media only screen and (min-width: 1170px) {
-    #cd-timeline {
-      margin: 3rem 0; }
-      #cd-timeline::before {
-        left: 50%;
-        margin-left: -2px; } }
-
-.cd-timeline-block {
-  position: relative;
-  margin: 2em 0; }
-  .cd-timeline-block:first-child {
-    margin-top: 0; }
-  .cd-timeline-block:last-child {
-    margin-bottom: 0; }
-  @media only screen and (min-width: 1170px) {
-    .cd-timeline-block {
-      margin: 4rem 0; }
-      .cd-timeline-block:first-child {
-        margin-top: 0; }
-      .cd-timeline-block:last-child {
-        margin-bottom: 0; } }
-
-.cd-timeline-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
-  background: #fdfdfd; }
-  .cd-timeline-img img {
-    display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin-left: -12px;
-    margin-top: -12px; }
-  @media only screen and (min-width: 1170px) {
-    .cd-timeline-img {
-      width: 60px;
-      height: 60px;
-      left: 50%;
-      margin-left: -30px;
-      /* Force Hardware Acceleration in WebKit */
-      -webkit-transform: translateZ(0);
-      -webkit-backface-visibility: hidden; }
-      .cssanimations .cd-timeline-img.is-hidden {
-        visibility: hidden; }
-      .cssanimations .cd-timeline-img.bounce-in {
-        visibility: visible;
-        -webkit-animation: cd-bounce-1 0.6s;
-                animation: cd-bounce-1 0.6s; } }
-
 @-webkit-keyframes cd-bounce-1 {
   0% {
     opacity: 0;
@@ -1037,29 +966,155 @@ Main components
     -webkit-transform: scale 1;
             transform: scale 1; } }
 
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 1170px;
+  margin: 10rem auto; }
+  .cd-container::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both; }
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+.cd-date {
+  display: block;
+  float: none;
+  width: 100%;
+  font-size: 26px; }
+  @media only screen and (min-width: 1170px) {
+    .cd-date {
+      font-size: 30px; } }
+
+.cd-container {
+  position: relative; }
+  .cd-container::before {
+    content: " ";
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background: #f0f0f0; }
+    @media only screen and (min-width: 1170px) {
+      .cd-container::before {
+        left: 50%;
+        margin-left: -10px; } }
+  .cd-container::after {
+    content: " ";
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 9px;
+    background: #f0f0f0; }
+    @media only screen and (min-width: 1170px) {
+      .cd-container::after {
+        left: 50%;
+        margin-left: -10px; } }
+
+.cd-timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0; }
+  .cd-timeline::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: #f0f0f0; }
+  @media only screen and (min-width: 1170px) {
+    .cd-timeline {
+      margin: 3rem 0; }
+      .cd-timeline::before {
+        left: 50%;
+        margin-left: -2px; } }
+
+.cd-timeline-block {
+  position: relative;
+  margin: 2em; }
+  .cd-timeline-block:first-child {
+    margin-top: 0; }
+  .cd-timeline-block:last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 1170px) {
+    .cd-timeline-block {
+      margin: 14rem 0; }
+      .cd-timeline-block:first-child {
+        margin-top: 0; }
+      .cd-timeline-block:last-child {
+        margin-bottom: 0; } }
+
+.cd-timeline-img {
+  position: absolute;
+  top: 10px;
+  left: -36px;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #7e7e7e; }
+  .cd-timeline-img img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px; }
+  @media only screen and (min-width: 1170px) {
+    .cd-timeline-img {
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      margin-left: -30px;
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden; }
+      .cssanimations .cd-timeline-img.is-hidden {
+        visibility: hidden; }
+      .cssanimations .cd-timeline-img.bounce-in {
+        visibility: visible;
+        -webkit-animation: cd-bounce-1 0.6s;
+                animation: cd-bounce-1 0.6s; } }
+
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  padding: 1em; }
-  .cd-timeline-content .cd-read-more,
-  .cd-timeline-content .cd-date {
-    display: inline-block; }
+  padding: 1em;
+  text-align: center; }
   .cd-timeline-content p {
     margin: 1em 0;
     line-height: 1.6; }
   .cd-timeline-content .cd-date {
     float: left;
-    padding: 0.8em 0;
+    padding: 0 0 0.8em;
     opacity: 0.7; }
   @media only screen and (min-width: 1170px) {
     .cd-timeline-content {
       margin-left: 0;
-      padding: 1.6em;
+      padding: 0 0 0 1.5em;
       width: 45%; }
       .cd-timeline-content::before {
         top: 24px;
         left: 100%;
         border-color: transparent; }
+      .cd-timeline-content:nth-child(2) {
+        padding: 0 0 0 1.5em; }
       .cd-timeline-content .cd-read-more {
         float: left; }
       .cd-timeline-content .cd-date {
@@ -1144,5 +1199,8 @@ Main components
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+
+#rsvp {
+  display: none; }
 
 /*# sourceMappingURL=maps/main.css.map */
