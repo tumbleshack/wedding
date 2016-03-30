@@ -1,0 +1,51 @@
+.hero-container {
+    position: relative;
+}
+
+.hero-bg {
+    background-image:url('/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: filter 2s ease-in-out;
+    margin: 0;
+    width: 100%;
+    margin-top: -4.5rem;
+    padding-top: 4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: -1;
+
+    &.filter {
+        filter: blur(10px);
+    }
+}
+
+.hero {
+    margin: 0;
+    font-family: $secondary-font-family;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 3s;
+
+
+    &__txt {
+        display: block;
+        text-align: center;
+
+        &--sm {
+            font-size: 4rem;
+        }
+
+        &--lrg {
+            font-size: 5.5rem;
+        }
+    }
+}
