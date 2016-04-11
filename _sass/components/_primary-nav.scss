@@ -5,6 +5,8 @@
   width: 100%;
   padding: 3rem 1rem 3rem;
   margin: 2rem -2rem;
+  position: relative;
+  z-index: 9;
 
   &__label {
     @include visuallyhidden;
