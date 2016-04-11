@@ -12,6 +12,7 @@ body {
 .wrapper {
   max-width: $content-width;
   margin: auto;
+  padding: 0 2rem;
 }
 
 .section__header {
@@ -24,6 +25,10 @@ body {
 
 
 @include mq($bp-medium) {
+
+  .wrapper {
+    padding: 0;
+  }
 
   .for-small {
     display: none;
