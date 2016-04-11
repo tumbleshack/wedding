@@ -145,7 +145,7 @@ Main components
 }
 .cd-timeline-block {
     position: relative;
-    margin: 2em;
+    margin: 2em 1em 2em 2em;
     @extend .clearfix;
 
     &:first-child {
@@ -208,7 +208,7 @@ Main components
     @extend .clearfix;
     position: relative;
     margin-left: 60px;
-    padding: 1em;
+    padding: 1em 0;
     text-align: center;
 
     p {
