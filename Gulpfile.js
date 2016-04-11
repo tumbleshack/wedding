@@ -14,7 +14,7 @@ var messages = {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
+    // browserSync.notify(messages.jekyllBuild);
     return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
@@ -76,3 +76,9 @@ gulp.task('deploy', function() {
   return gulp.src('./_site/**/*')
     .pipe(ghPages());
 });
+
+/**
+ * Build task, running just `gulp` will compile the sass,
+ * compile the jekyll site, launch BrowserSync & watch files.
+ */
+gulp.task('build', ['jekyll-build', 'sass']);
