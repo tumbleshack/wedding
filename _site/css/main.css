@@ -761,6 +761,18 @@ body {
   .for-large {
     display: block; } }
 
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden; }
+  .google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important; }
+
 .header {
   padding: 0 0 4.5rem;
   margin: 2.25rem 0 4.5rem;
@@ -1054,7 +1066,7 @@ Main components
 
 .cd-timeline-block {
   position: relative;
-  margin: 2em; }
+  margin: 2em 1em 2em 2em; }
   .cd-timeline-block:first-child {
     margin-top: 0; }
   .cd-timeline-block:last-child {
@@ -1104,7 +1116,7 @@ Main components
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  padding: 1em;
+  padding: 1em 0;
   text-align: center; }
   .cd-timeline-content p {
     margin: 1em 0;
@@ -1243,7 +1255,7 @@ Main components
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   position: absolute;
-  top: 1.5rem;
+  top: 0.5rem;
   left: 0;
   width: 100%;
   -webkit-box-pack: center;
@@ -1261,9 +1273,9 @@ Main components
     display: block;
     text-align: center; }
     .hero__txt--sm {
-      font-size: 4rem; }
+      font-size: 3rem; }
     .hero__txt--lrg {
-      font-size: 5.5rem; }
+      font-size: 4.5rem; }
 
 #rsvp {
   display: none; }
