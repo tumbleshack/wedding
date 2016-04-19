@@ -1,7 +1,7 @@
 // Default primary nav behaviour
 .primary-nav {
-  background: $grey-color;
-  color: $light-color;
+  background: $light-color;
+  color: $dark-color;
   width: 100%;
   padding: 3rem 1rem 3rem;
   margin: 2rem -2rem;
@@ -23,7 +23,7 @@
     }
 
     a {
-      color: $light-color;
+      color: $dark-color;
       border-bottom: none;
 
       &:hover {
@@ -153,7 +153,7 @@
 }
 
 .nav-icon.open span {
-  background-color: $light-color;
+  background-color: $dark-color;
 }
 
 .nav-icon.open span:nth-child(1) {
