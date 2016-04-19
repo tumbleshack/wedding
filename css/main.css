@@ -804,8 +804,8 @@ body {
   margin: 4.5rem 0 4.5rem; }
 
 .primary-nav {
-  background: #828282;
-  color: #fdfdfd;
+  background: #fdfdfd;
+  color: #111;
   width: 100%;
   padding: 3rem 1rem 3rem;
   margin: 2rem -2rem;
@@ -828,7 +828,7 @@ body {
     .primary-nav__item:last-child {
       margin-bottom: 0; }
     .primary-nav__item a {
-      color: #fdfdfd;
+      color: #111;
       border-bottom: none; }
       .primary-nav__item a:hover {
         text-decoration: underline; }
@@ -925,7 +925,7 @@ body {
       top: 18px; }
 
 .nav-icon.open span {
-  background-color: #fdfdfd; }
+  background-color: #111; }
 
 .nav-icon.open span:nth-child(1) {
   top: 18px;
