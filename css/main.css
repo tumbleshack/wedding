@@ -857,8 +857,10 @@ body {
       display: inline-block;
       width: auto;
       margin-right: 2rem; }
-      .primary-nav__item a:hover {
-        text-decoration: none; }
+      .primary-nav__item a {
+        color: #fdfdfd; }
+        .primary-nav__item a:hover {
+          text-decoration: none; }
       .primary-nav__item .link-arrow {
         display: none; } }
 
