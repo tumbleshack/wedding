@@ -6,6 +6,13 @@ var cp          = require('child_process');
 var sourcemaps = require('gulp-sourcemaps');
 var ghPages = require('gulp-gh-pages');
 
+var babelify = require('babelify');
+var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
@@ -29,7 +36,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -55,10 +62,33 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
+ */
+ gulp.task('js', function () {
+     var bundler = browserify({
+         entries: '_js-es6/app.js',
+         debug: true
+     });
+     bundler.transform(babelify);
+
+     bundler.bundle()
+         .on('error', function (err) { console.error(err); })
+         .pipe(source('app.js'))
+         .pipe(buffer())
+         .pipe(sourcemaps.init({ loadMaps: true }))
+         .pipe(uglify()) // Use any gulp plugins you want now
+         .pipe(sourcemaps.write('./'))
+         .pipe(gulp.dest('_site/js'))
+         .pipe(browserSync.reload({stream:true}))
+         .pipe(gulp.dest('js'));
+ });
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
+    gulp.watch(['_js-es6/**/*.js'], ['js']);
     gulp.watch(['_sass/**/*.scss'], ['sass']);
     gulp.watch(['**/*.html', '**/*.markdown', '**/*.md'], ['jekyll-rebuild']);
 });
@@ -68,17 +98,3 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
-
-/**
- * Deploy to gh-pages branch to push to Github Pages instance
- */
-gulp.task('deploy', function() {
-  return gulp.src('./_site/**/*')
-    .pipe(ghPages());
-});
-
-/**
- * Build task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
- */
-gulp.task('build', ['jekyll-build', 'sass']);
