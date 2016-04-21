@@ -68,17 +68,3 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
-
-/**
- * Deploy to gh-pages branch to push to Github Pages instance
- */
-gulp.task('deploy', function() {
-  return gulp.src('./_site/**/*')
-    .pipe(ghPages());
-});
-
-/**
- * Build task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
- */
-gulp.task('build', ['jekyll-build', 'sass']);
