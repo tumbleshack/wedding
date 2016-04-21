@@ -1,7 +1,5 @@
 export default function PrimaryNav() {
 
-    console.log('hola');
-
     // cache dom elements
     var body = document.body,
         navTrigger = document.querySelector(".js-nav-trigger"),
