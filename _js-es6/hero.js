@@ -1,7 +1,11 @@
-// hero.js
+export default function Hero() {
 
-var localVariable = 123; // not visible outside this file
+    let viewPortHeight = $(window).height();
+    let heroBg = document.querySelector(".hero-bg");
+    let hero = document.querySelector(".hero");
+    let heroHeight = ((viewPortHeight - 200) + "px");
 
-export default function Hero(age) {
-  setTimeout(() => { console.log(localVariable); }, 1000);
+    heroBg.style.height = heroHeight;
+    hero.style.opacity = "1";
+
 };

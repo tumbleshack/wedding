@@ -1,5 +1,8 @@
 
-// main manifest for JS here helo
-import Hero from './hero';
+// main manifest for JS file
 
+import Hero from './hero';
 Hero();
+
+import PrimaryNav from './primary-nav';
+PrimaryNav();
