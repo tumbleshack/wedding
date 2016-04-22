@@ -13,6 +13,7 @@
     box-sizing: border-box;
     overflow: hidden;
     z-index: -1;
+    min-height: 75vh;
 
     &.filter {
         filter: blur(10px);
@@ -31,7 +32,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    opacity: 0;
     transition: opacity 3s;
 
 
