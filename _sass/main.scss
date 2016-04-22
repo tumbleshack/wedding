@@ -39,6 +39,7 @@ $bp-medium:    (calc($content-width + ($spacing-unit*2)));
 @import
     // Utils
     "utils/visually-hidden",
+    "utils/animations",
     // Scaffolding
     "milligram",
     "base",

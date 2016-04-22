@@ -5,7 +5,6 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var sourcemaps = require('gulp-sourcemaps');
 var ghPages = require('gulp-gh-pages');
-
 var babelify = require('babelify');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
