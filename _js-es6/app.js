@@ -1,6 +1,7 @@
+// libraries
+import ZenScroll from './libs/zenscroll';
 
-// main manifest for JS file
-
+// modules
 import Hero from './modules/hero';
 Hero();
 
