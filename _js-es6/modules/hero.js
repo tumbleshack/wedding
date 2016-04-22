@@ -6,8 +6,6 @@ export default function Hero() {
     let heroHeight = ((viewPortHeight - 200) + "px");
 
     heroBg.style.height = heroHeight;
-
     hero.style.height = heroHeight;
-    hero.style.opacity = "1";
 
 };
