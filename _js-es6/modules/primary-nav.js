@@ -4,17 +4,30 @@ export default function PrimaryNav() {
     var body = document.body,
         navTrigger = document.querySelector(".js-nav-trigger"),
         container = document.querySelector(".container"),
-        primaryNav = document.querySelector(".js-primary-nav");
+        primaryNav = document.querySelector(".js-primary-nav"),
+        primaryNavLinks = document.querySelectorAll(".js-primary-nav a");
 
     // Flag that JS has loaded
     body.classList.remove("no-js");
     body.classList.add("js");
 
-    // add event ,listener on click
+    // Hamburger menu
     navTrigger.addEventListener("click", function(){
         // toggle active class on the nav trigger
         this.classList.toggle("open");
         // toggle the active class on site container
         container.classList.toggle("js-nav-active");
     });
+
+    // In-menu link click
+    for(var i=0; i < primaryNavLinks.length; i++){
+        var primaryNavLink = primaryNavLinks[i];
+        primaryNavLink.onclick = function(){
+            // toggle active class on the nav trigger
+            navTrigger.classList.toggle("open");
+            // toggle the active class on site container
+            container.classList.toggle("js-nav-active");
+        };
+    }
+
 };
