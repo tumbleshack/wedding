@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 // Variables
 $base-font-family: 'Raleway', sans-serif;
@@ -18,7 +18,7 @@ $light-color:     #fdfdfd;
 $grey-color:       #828282;
 
 $background-color: #3b4654;
-$highlight-color: #CB99C9;
+$highlight-color: #cb99c9;
 
 // Width of the content area
 $content-width:    640px;
@@ -30,29 +30,30 @@ $bp-medium:    (calc($content-width + ($spacing-unit*2)));
 
 
 @mixin mq($resolution) {
-    @media screen and (min-width: $resolution) {
-        @content;
-    }
+  @media screen and (min-width: $resolution) {
+    @content;
+  }
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-    // Utils
-    "utils/visually-hidden",
-    "utils/animations",
-    // Scaffolding
-    "milligram",
-    "base",
-    "layout",
-    "header",
-    "footer",
-    // Components
-    "components/primary-nav",
-    "components/timeline",
-    "components/hero"
+  // Utils
+  'utils/visually-hidden',
+  'utils/animations',
+  // Scaffolding
+  'milligram',
+  'base',
+  'layout',
+  'header',
+  'footer',
+  // Components
+  'components/primary-nav',
+  'components/timeline',
+  'components/hero';
 ;
 
 // Temp
+// scss-lint:disable IdSelector
 #rsvp {
-    display: none;
+  display: none;
 }

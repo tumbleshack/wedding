@@ -1,112 +1,150 @@
 /**
  * Box sizing
  */
- * {
-     box-sizing: border-box;
- }
-
-
+* {
+  box-sizing: border-box;
+}
 
 /**
  * Reset some basic elements
  */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /**
  * Basic styling
  */
 body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: $light-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
-    -webkit-font-smoothing: antialiased;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $light-color;
+  background-color: $background-color;
+  // These prefixes cannot be added via autoprefixer
+  // scss-lint:disable VendorPrefix
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  // scss-lint:enable VendorPrefix
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $secondary-font-family;
-    text-align: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $secondary-font-family;
+  text-align: center;
 }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+%vertical-rhythm,
+blockquote,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+ul {
+  margin-bottom: $spacing-unit / 2;
 }
 
 /**
  * Sections
  */
 section {
-    margin: 6rem 0;
+  margin: 6rem 0;
 }
 
 /**
  * Images
  */
 img {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 /**
  * Figures
  */
 figure > img {
-    display: block;
+  display: block;
 }
 
 figcaption {
-    font-size: $small-font-size;
+  font-size: $small-font-size;
 }
 
 /**
  * Lists
  */
-ul, ol {
-    margin: 4rem 2rem;
-    list-style: outside;
+ol,
+ul {
+  margin: 4rem 2rem;
+  list-style: outside;
 }
 
 li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
+  > ol,
+  > ul {
+    margin-bottom: 0;
+  }
 }
 
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $base-font-weight;
 }
 
 /**
  * Default Paragraph styling
  */
 p {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 
- a {
-    color: $highlight-color;
-    box-sizing: border-box;
-    transition: .75s all;
+/**
+ * Default Link styling
+ */
+a {
+  color: $highlight-color;
+  box-sizing: border-box;
+  transition: 0.75s all;
 
-    &:hover {
-        color: darken($highlight-color, 10%);
-        border-bottom: 1px dotted darken($highlight-color, 10%);
-    }
- }
+  &:hover {
+    color: darken($highlight-color, 10%);
+    border-bottom: 1px dotted darken($highlight-color, 10%);
+  }
+}

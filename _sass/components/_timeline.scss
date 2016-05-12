@@ -1,308 +1,312 @@
-@function calculateRem($size) {
-    $remSize: $size / 16px;
-    @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-    font-size: $size;
-    font-size: calculateRem($size);
-}
-
-// mixins - border radius
-@mixin border-radius($radius:.25em) {
-    border-radius: $radius;
-}
-
 // keyframes
 @keyframes(cd-bounce-1) {
-    0% {
-        opacity: 0;
-        transform: scale 0.5;
-    }
-    60% {
-        opacity: 1;
-        transform: scale 1.2;
-    }
-    100% {
-        transform: scale 1;
-    }
+
+  0% {
+    opacity: 0;
+    transform: scale 0.5;
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale 1.2;
+  }
+
+  100% {
+    transform: scale 1;
+  }
 }
 
 // layout - breakpoints
-$S: 320px;
-$M: 768px;
-$L: 1170px;
+$s: 320px;
+$m: 768px;
+$l: 1170px;
 
 // layout - media queries
-@mixin MQ($canvas) {
-    @if $canvas == S {
-        @media only screen and (min-width: $S) {
-            @content;
-        }
+@mixin mq($canvas) {
+  @if $canvas == S {
+    @media only screen and (min-width: $s) {
+      @content;
     }
-    @else if $canvas == M {
-        @media only screen and (min-width: $M) {
-            @content;
-        }
+  } @else if $canvas == M {
+    @media only screen and (min-width: $m) {
+      @content;
     }
-    @else if $canvas == L {
-        @media only screen and (min-width: $L) {
-            @content;
-        }
+  } @else if $canvas == l {
+    @media only screen and (min-width: $l) {
+      @content;
     }
+  }
 }
+
 /* --------------------------------
-
 Modules - reusable parts of our design
-
 -------------------------------- */
 .cd-container {
-    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-    width: 90%;
-    max-width: $L; // breakpoints inside partials > _layout.scss
-    margin: 10rem auto;
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: $l; // breakpoints inside partials > _layout.scss
+  margin: 10rem auto;
 
-    &::after {
-        /* clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
+  &::after {
+    @extend %clearfix;
+  }
 }
+
 /* --------------------------------
-
 Main components
-
 -------------------------------- */
 
 .cd-date {
-    display: block;
-    float: none;
-    width: 100%;
-    font-size: 26px;
+  display: block;
+  float: none;
+  width: 100%;
+  font-size: 26px;
 
-    @include MQ(L) {
-        font-size: 30px;
-    }
+  @include mq(l) {
+    font-size: 30px;
+  }
 }
 
 .cd-container {
-    position: relative;
+  position: relative;
 
-    &::before {
-        content: " ";
-        width: 20px;
-        height: 4px;
-        position: absolute;
-        top: 0;
-        left: 10px;
-        background: darken($light-color, 5%);
+  &::before {
+    content: ' ';
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background: darken($light-color, 5%);
 
-        @include MQ(L) {
-            left: 50%;
-            margin-left: -10px;
-        }
+    @include mq(l) {
+      left: 50%;
+      margin-left: -10px;
     }
+  }
 
-    &::after {
-        content: " ";
-        width: 20px;
-        height: 4px;
-        position: absolute;
-        bottom: 0;
-        left: 9px;
-        background: darken($light-color, 5%);
+  &::after {
+    content: ' ';
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 9px;
+    background: darken($light-color, 5%);
 
-        @include MQ(L) {
-            left: 50%;
-            margin-left: -10px;
-        }
+    @include mq(l) {
+      left: 50%;
+      margin-left: -10px;
     }
+  }
 }
 
 .cd-timeline {
-    position: relative;
-    padding: 2rem 0;
-    margin: 2rem 0;
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0;
+
+  @include mq(l) {
+    margin: 3rem 0;
 
     &::before {
-        /* this is the vertical line */
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 18px;
-        height: 100%;
-        width: 4px;
-        background: darken($light-color, 5%);
+      left: 50%;
+      margin-left: -2px;
     }
-    @include MQ(L) {
-        margin: 3rem 0;
-        &::before {
-            left: 50%;
-            margin-left: -2px;
-        }
-    }
+  }
+
+  &::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: darken($light-color, 5%);
+  }
 }
+
 .cd-timeline-block {
-    position: relative;
-    margin: 2em 1em 2em 2em;
-    @extend .clearfix;
+  @extend %clearfix;
+  position: relative;
+  margin: 2em 1em 2em 2em;
+
+  @include mq(l) {
+    margin: 14rem 0;
 
     &:first-child {
-        margin-top: 0;
+      margin-top: 0;
     }
+
     &:last-child {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
-    @include MQ(L) {
-        margin: 14rem 0;
+  }
 
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
+
 .cd-timeline-img {
-    position: absolute;
-    top: 10px;
-    left: -36px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: darken($light-color, 50%);
+  position: absolute;
+  top: 10px;
+  left: -36px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: darken($light-color, 50%);
 
-    img {
-        display: block;
-        width: 24px;
-        height: 24px;
-        position: relative;
-        left: 50%;
-        top: 50%;
-        margin-left: -12px;
-        margin-top: -12px;
+  @include mq(l) {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    /* Force Hardware Acceleration in WebKit */
+    // scss-lint:disable VendorPrefix
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    // scss-lint:enable VendorPrefix
+
+    .cssanimations &.is-hidden {
+      visibility: hidden;
     }
 
-    @include MQ(L) {
-        width: 60px;
-        height: 60px;
-        left: 50%;
-        margin-left: -30px;
-        /* Force Hardware Acceleration in WebKit */
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-
-        .cssanimations &.is-hidden {
-            visibility: hidden;
-        }
-        .cssanimations &.bounce-in {
-            visibility: visible;
-            animation: cd-bounce-1 0.6s;
-        }
+    .cssanimations &.bounce-in {
+      visibility: visible;
+      animation: cd-bounce-1 0.6s;
     }
+  }
+
+  img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+  }
 }
 
 .cd-timeline-content {
-    @extend .clearfix;
-    position: relative;
-    margin-left: 60px;
-    padding: 1em 0;
-    text-align: center;
+  @extend %clearfix;
+  position: relative;
+  margin-left: 60px;
+  padding: 1em 0;
+  text-align: center;
 
-    p {
-        margin: 1em 0;
-        line-height: 1.6;
+  @include mq(l) {
+
+    margin-left: 0;
+    padding: 0 0 0 1.5em;
+    width: 45%;
+
+    &::before {
+      top: 24px;
+      left: 100%;
+      border-color: transparent;
     }
+
+    &:nth-child(2) {
+      padding: 0 0 0 1.5em;
+    }
+
+    .cd-read-more {
+      float: left;
+    }
+
     .cd-date {
-        float: left;
-        padding: 0 0 0.8em;
-        opacity: 0.7;
+      position: absolute;
+      width: 100%;
+      left: 130%;
+      top: 0;
     }
 
-    @include MQ(L) {
+    .cd-timeline-block:nth-child(even) & {
+      float: right;
 
-        margin-left: 0;
-        padding: 0 0 0 1.5em;
-        width: 45%;
+      &::before {
+        top: 24px;
+        left: auto;
+        right: 100%;
+        border-color: transparent;
+      }
 
-        &::before {
-            top: 24px;
-            left: 100%;
-            border-color: transparent;
-        }
+      .cd-read-more {
+        float: right;
+      }
 
-        &:nth-child(2) {
-            padding: 0 0 0 1.5em;
-        }
-
-
-        .cd-read-more {
-            float: left;
-        }
-        .cd-date {
-            position: absolute;
-            width: 100%;
-            left: 130%;
-            top: 0;
-        }
-        .cd-timeline-block:nth-child(even) & {
-            float: right;
-
-            &::before {
-                top: 24px;
-                left: auto;
-                right: 100%;
-                border-color: transparent;
-            }
-            .cd-read-more {
-                float: right;
-            }
-            .cd-date {
-                left: auto;
-                right: 130%;
-                text-align: centre;
-            }
-        }
-        .cssanimations &.is-hidden {
-            visibility: hidden;
-        }
-        .cssanimations &.bounce-in {
-            visibility: visible;
-            animation: cd-bounce-2 0.6s;
-        }
+      .cd-date {
+        left: auto;
+        right: 130%;
+        text-align: centre;
+      }
     }
+
+    .cssanimations &.is-hidden {
+      visibility: hidden;
+    }
+
+    .cssanimations &.bounce-in {
+      visibility: visible;
+      animation: cd-bounce-2 0.6s;
+    }
+  }
+
+  p {
+    margin: 1em 0;
+    line-height: 1.6;
+  }
+
+  .cd-date {
+    float: left;
+    padding: 0 0 0.8em;
+    opacity: 0.7;
+  }
 }
-@include MQ(L) {
-    /* inverse bounce effect on even content blocks */
-    .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
-        animation: cd-bounce-2-inverse 0.6s;
-    }
+
+@include mq(l) {
+  /* inverse bounce effect on even content blocks */
+  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
+    animation: cd-bounce-2-inverse 0.6s;
+  }
 }
+
 @keyframes(cd-bounce-2) {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateX(20px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
+
 @keyframes(cd-bounce-2-inverse) {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateX(-20px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
