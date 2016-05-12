@@ -6,15 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-name: Barry McGee
-job_title: Front End Developer
-email: hello@barrymcgee.co.uk
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a Front End Developer - based in London, England.
+We're getting married on 29th September 2016!
+
 baseurl: "" # the subpath of your site, e.g. /blog
+
 url: "http://barryandgillian.wedding/" # the base hostname & protocol for your site
-twitter_username: barrymcgee
-github_username:  barrymcgee
 
 # Build settings
 markdown: kramdown
