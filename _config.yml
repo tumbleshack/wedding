@@ -19,5 +19,5 @@ markdown: kramdown
 # only build incrementally
 incremental: true
 
-# next available for new work
-next_up: 4th April 2016
+# exclude node_modules from jekyll generation
+exclude: [node_modules]
