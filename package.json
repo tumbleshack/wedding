@@ -4,7 +4,7 @@
   "description": "Codebase for https://barryandgillian.wedding",
   "main": "_site/index.html",
   "scripts": {
-    "test": "htmlproofer ./_site --only-4xx --check-html && bundle exec jekyll build"
+    "test": "htmlproofer ./_site --only-4xx --check-html && bundle exec jekyll build && scss-lint ./_sass/**/*.scss"
   },
   "repository": {
     "type": "git",
