@@ -1213,13 +1213,7 @@ body {
     -webkit-transform: scale 1;
             transform: scale 1; } }
 
-/* --------------------------------
-Modules - reusable parts of our design
--------------------------------- */
 .cd-container {
-  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
-  max-width: 1170px;
   margin: 10rem auto; }
 
 /* --------------------------------
@@ -1228,11 +1222,7 @@ Main components
 .cd-date {
   display: block;
   float: none;
-  width: 100%;
-  font-size: 26px; }
-  @media only screen and (min-width: 1170px) {
-    .cd-date {
-      font-size: 30px; } }
+  width: 100%; }
 
 .cd-container {
   position: relative; }
@@ -1244,7 +1234,7 @@ Main components
     top: 0;
     left: 10px;
     background: #f0f0f0; }
-    @media only screen and (min-width: 1170px) {
+    @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
       .cd-container::before {
         left: 50%;
         margin-left: -10px; } }
@@ -1256,7 +1246,7 @@ Main components
     bottom: 0;
     left: 9px;
     background: #f0f0f0; }
-    @media only screen and (min-width: 1170px) {
+    @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
       .cd-container::after {
         left: 50%;
         margin-left: -10px; } }
@@ -1265,7 +1255,7 @@ Main components
   position: relative;
   padding: 2rem 0;
   margin: 2rem 0; }
-  @media only screen and (min-width: 1170px) {
+  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
     .cd-timeline {
       margin: 3rem 0; }
       .cd-timeline::before {
@@ -1284,7 +1274,7 @@ Main components
 .cd-timeline-block {
   position: relative;
   margin: 2em 1em 2em 2em; }
-  @media only screen and (min-width: 1170px) {
+  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
     .cd-timeline-block {
       margin: 14rem 0; }
       .cd-timeline-block:first-child {
@@ -1305,7 +1295,7 @@ Main components
   -webkit-border-radius: 50%;
           border-radius: 50%;
   background: #7e7e7e; }
-  @media only screen and (min-width: 1170px) {
+  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
     .cd-timeline-img {
       width: 60px;
       height: 60px;
@@ -1335,7 +1325,7 @@ Main components
   margin-left: 60px;
   padding: 1em 0;
   text-align: center; }
-  @media only screen and (min-width: 1170px) {
+  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
     .cd-timeline-content {
       margin-left: 0;
       padding: 0 0 0 1.5em;
@@ -1346,8 +1336,6 @@ Main components
         border-color: transparent; }
       .cd-timeline-content:nth-child(2) {
         padding: 0 0 0 1.5em; }
-      .cd-timeline-content .cd-read-more {
-        float: left; }
       .cd-timeline-content .cd-date {
         position: absolute;
         width: 100%;
@@ -1360,8 +1348,6 @@ Main components
           left: auto;
           right: 100%;
           border-color: transparent; }
-        .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
-          float: right; }
         .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
           left: auto;
           right: 130%;
@@ -1372,15 +1358,12 @@ Main components
         visibility: visible;
         -webkit-animation: cd-bounce-2 0.6s;
                 animation: cd-bounce-2 0.6s; } }
-  .cd-timeline-content p {
-    margin: 1em 0;
-    line-height: 1.6; }
   .cd-timeline-content .cd-date {
     float: left;
     padding: 0 0 0.8em;
     opacity: 0.7; }
 
-@media only screen and (min-width: 1170px) {
+@media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;

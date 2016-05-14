@@ -16,35 +16,7 @@
   }
 }
 
-// layout - breakpoints
-$s: 320px;
-$m: 768px;
-$l: 1170px;
-
-// layout - media queries
-@mixin mq($canvas) {
-  @if $canvas == S {
-    @media only screen and (min-width: $s) {
-      @content;
-    }
-  } @else if $canvas == M {
-    @media only screen and (min-width: $m) {
-      @content;
-    }
-  } @else if $canvas == l {
-    @media only screen and (min-width: $l) {
-      @content;
-    }
-  }
-}
-
-/* --------------------------------
-Modules - reusable parts of our design
--------------------------------- */
 .cd-container {
-  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
-  max-width: $l; // breakpoints inside partials > _layout.scss
   margin: 10rem auto;
 
   &::after {
@@ -60,11 +32,6 @@ Main components
   display: block;
   float: none;
   width: 100%;
-  font-size: 26px;
-
-  @include mq(l) {
-    font-size: 30px;
-  }
 }
 
 .cd-container {
@@ -79,7 +46,7 @@ Main components
     left: 10px;
     background: darken($light-color, 5%);
 
-    @include mq(l) {
+    @include mq($bp-medium) {
       left: 50%;
       margin-left: -10px;
     }
@@ -94,7 +61,7 @@ Main components
     left: 9px;
     background: darken($light-color, 5%);
 
-    @include mq(l) {
+    @include mq($bp-medium) {
       left: 50%;
       margin-left: -10px;
     }
@@ -106,7 +73,7 @@ Main components
   padding: 2rem 0;
   margin: 2rem 0;
 
-  @include mq(l) {
+  @include mq($bp-medium) {
     margin: 3rem 0;
 
     &::before {
@@ -132,7 +99,7 @@ Main components
   position: relative;
   margin: 2em 1em 2em 2em;
 
-  @include mq(l) {
+  @include mq($bp-medium) {
     margin: 14rem 0;
 
     &:first-child {
@@ -162,7 +129,7 @@ Main components
   border-radius: 50%;
   background: darken($light-color, 50%);
 
-  @include mq(l) {
+  @include mq($bp-medium) {
     width: 60px;
     height: 60px;
     left: 50%;
@@ -202,8 +169,7 @@ Main components
   padding: 1em 0;
   text-align: center;
 
-  @include mq(l) {
-
+  @include mq($bp-medium) {
     margin-left: 0;
     padding: 0 0 0 1.5em;
     width: 45%;
@@ -216,10 +182,6 @@ Main components
 
     &:nth-child(2) {
       padding: 0 0 0 1.5em;
-    }
-
-    .cd-read-more {
-      float: left;
     }
 
     .cd-date {
@@ -239,10 +201,6 @@ Main components
         border-color: transparent;
       }
 
-      .cd-read-more {
-        float: right;
-      }
-
       .cd-date {
         left: auto;
         right: 130%;
@@ -260,11 +218,6 @@ Main components
     }
   }
 
-  p {
-    margin: 1em 0;
-    line-height: 1.6;
-  }
-
   .cd-date {
     float: left;
     padding: 0 0 0.8em;
@@ -272,7 +225,7 @@ Main components
   }
 }
 
-@include mq(l) {
+@include mq($bp-medium) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     animation: cd-bounce-2-inverse 0.6s;
