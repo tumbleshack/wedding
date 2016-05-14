@@ -1,0 +1,12 @@
+.img-banner {
+
+  height: 500px;
+  background-color: white;
+  margin-top: 5rem;
+
+  &--darver {
+    background-image:url('../banner-darver.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+}

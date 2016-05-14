@@ -21,7 +21,7 @@ $background-color: #3b4654;
 $highlight-color: #cb99c9;
 
 // Width of the content area
-$content-width:    640px;
+$content-width:    760px;
 
 // Breakpoints
 $bp-small:    640px;
@@ -49,7 +49,8 @@ $bp-medium:    (calc($content-width + ($spacing-unit*2)));
   // Components
   'components/primary-nav',
   'components/timeline',
-  'components/hero';
+  'components/hero',
+  'components/img-banner';
 ;
 
 // Temp
