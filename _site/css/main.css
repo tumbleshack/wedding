@@ -1,3 +1,81 @@
+@-webkit-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale 0.5;
+            transform: scale 0.5; }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale 1.2;
+            transform: scale 1.2; }
+  100% {
+    -webkit-transform: scale 1;
+            transform: scale 1; } }
+
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale 0.5;
+            transform: scale 0.5; }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale 1.2;
+            transform: scale 1.2; }
+  100% {
+    -webkit-transform: scale 1;
+            transform: scale 1; } }
+
+@-webkit-keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@-webkit-keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
 .animated {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
@@ -1187,38 +1265,9 @@ body {
         .primary-nav-wrap .primary-nav__item:last-child {
           margin-right: 0; } }
 
-@-webkit-keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale 0.5;
-            transform: scale 0.5; }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale 1.2;
-            transform: scale 1.2; }
-  100% {
-    -webkit-transform: scale 1;
-            transform: scale 1; } }
-
-@keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale 0.5;
-            transform: scale 0.5; }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale 1.2;
-            transform: scale 1.2; }
-  100% {
-    -webkit-transform: scale 1;
-            transform: scale 1; } }
-
 .cd-container {
   margin: 10rem auto; }
 
-/* --------------------------------
-Main components
--------------------------------- */
 .cd-date {
   display: block;
   float: none;
@@ -1234,7 +1283,7 @@ Main components
     top: 0;
     left: 10px;
     background: #f0f0f0; }
-    @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+    @media screen and (min-width: 640px) {
       .cd-container::before {
         left: 50%;
         margin-left: -10px; } }
@@ -1246,7 +1295,7 @@ Main components
     bottom: 0;
     left: 9px;
     background: #f0f0f0; }
-    @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+    @media screen and (min-width: 640px) {
       .cd-container::after {
         left: 50%;
         margin-left: -10px; } }
@@ -1255,12 +1304,9 @@ Main components
   position: relative;
   padding: 2rem 0;
   margin: 2rem 0; }
-  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+  @media screen and (min-width: 640px) {
     .cd-timeline {
-      margin: 3rem 0; }
-      .cd-timeline::before {
-        left: 50%;
-        margin-left: -2px; } }
+      margin: 3rem 0; } }
   .cd-timeline::before {
     /* this is the vertical line */
     content: '';
@@ -1270,11 +1316,15 @@ Main components
     height: 100%;
     width: 4px;
     background: #f0f0f0; }
+    @media screen and (min-width: 640px) {
+      .cd-timeline::before {
+        left: 50%;
+        margin-left: -2px; } }
 
 .cd-timeline-block {
   position: relative;
   margin: 2em 1em 2em 2em; }
-  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+  @media screen and (min-width: 640px) {
     .cd-timeline-block {
       margin: 14rem 0; }
       .cd-timeline-block:first-child {
@@ -1295,7 +1345,7 @@ Main components
   -webkit-border-radius: 50%;
           border-radius: 50%;
   background: #7e7e7e; }
-  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+  @media screen and (min-width: 640px) {
     .cd-timeline-img {
       width: 60px;
       height: 60px;
@@ -1325,7 +1375,7 @@ Main components
   margin-left: 60px;
   padding: 1em 0;
   text-align: center; }
-  @media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+  @media screen and (min-width: 640px) {
     .cd-timeline-content {
       margin-left: 0;
       padding: 0 0 0 1.5em;
@@ -1363,63 +1413,11 @@ Main components
     padding: 0 0 0.8em;
     opacity: 0.7; }
 
-@media screen and (min-width: calc($content-width + ($spacing-unit*2))) {
+@media screen and (min-width: 640px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
             animation: cd-bounce-2-inverse 0.6s; } }
-
-@-webkit-keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px); }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px); }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); } }
-
-@keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px); }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px); }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); } }
-
-@-webkit-keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px); }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(-20px);
-            transform: translateX(-20px); }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); } }
-
-@keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px); }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(-20px);
-            transform: translateX(-20px); }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); } }
 
 .hero-container {
   position: relative; }
