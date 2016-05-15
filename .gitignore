@@ -1,14 +1,9 @@
 .sass-cache
 .jekyll-metadata
 node_modules
+_site
 css/maps/main.css.map
 .DS_Store
-_site/css/maps/main.css.map
-_site/logo.sketch
 Gemfile.lock
-_site/Gemfile.lock
-_site/Gulpfile.js
-_site/README.md
-_site/package.json
+
 js/app.js.map
-_site/js/app.js.map
