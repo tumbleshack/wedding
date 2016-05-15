@@ -1478,7 +1478,7 @@ body {
 
 .img-banner {
   height: 500px;
-  background-color: white;
+  background-color: #fdfdfd;
   margin-top: 5rem; }
   .img-banner--darver {
     background-image: url("../banner-darver.jpg");
