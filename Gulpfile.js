@@ -97,3 +97,8 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+/**
+ * Gulp 'build' task which is used to build the site on the production box.
+ */
+gulp.task('build', ['jekyll-build', 'sass', 'js']);
