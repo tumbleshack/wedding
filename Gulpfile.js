@@ -4,7 +4,6 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var sourcemaps = require('gulp-sourcemaps');
-var ghPages = require('gulp-gh-pages');
 var babelify = require('babelify');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
@@ -35,7 +34,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass-develop', 'js-develop', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -46,9 +45,9 @@ gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
-gulp.task('sass', function () {
+gulp.task('sass-develop', function () {
     return gulp.src('_sass/main.scss')
-         .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: ['scss'],
             onError: browserSync.notify
@@ -60,10 +59,19 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('css'));
 });
 
+gulp.task('sass-build', function () {
+    return gulp.src('_sass/main.scss')
+        .pipe(sass({
+            includePaths: ['scss']
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('_site/css'));
+});
+
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
- gulp.task('js', function () {
+ gulp.task('js-develop', function () {
      var bundler = browserify({
          entries: '_js-es6/app.js',
          debug: true
@@ -81,6 +89,20 @@ gulp.task('sass', function () {
          .pipe(browserSync.reload({stream:true}))
          .pipe(gulp.dest('js'));
  });
+
+  gulp.task('js-build', function () {
+    var bundler = browserify({
+      entries: '_js-es6/app.js',
+      debug: true
+    });
+    bundler.transform(babelify);
+
+    bundler.bundle()
+      .pipe(source('app.js'))
+      .pipe(buffer())
+      .pipe(uglify()) // Use any gulp plugins you want now
+      .pipe(gulp.dest('_site/js'))
+  });
 
 /**
  * Watch scss files for changes & recompile
@@ -101,4 +123,4 @@ gulp.task('default', ['browser-sync', 'watch']);
 /**
  * Gulp 'build' task which is used to build the site on the production box.
  */
-gulp.task('build', ['jekyll-build', 'sass', 'js']);
+gulp.task('build', ['jekyll-build', 'sass-build', 'js-build']);
