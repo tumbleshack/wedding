@@ -8,14 +8,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300italic,600|Parisienne" rel="stylesheet" type="text/css">
-
-  <link rel="stylesheet" href="{{ "css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-
-  <!-- Prefetching -->
-  {% for my_page in site.pages %}
-    <link rel="prefetch" href="{{ my_page.url | prepend: site.baseurl }}" />
-  {% endfor %}
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
 </head>
