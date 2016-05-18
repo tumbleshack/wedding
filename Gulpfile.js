@@ -25,7 +25,7 @@ var messages = {
  });
 
 gulp.task('jekyll-build', function (done) {
-    return cp.spawn('jekyll-develop', ['build'], {stdio: 'inherit'})
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -91,8 +91,7 @@ gulp.task('js-develop', function () {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('_site/js'))
     .pipe(browserSync.reload({stream:true}));
-  }
-);
+});
 
 gulp.task('js-build', function () {
   var bundler = browserify({
