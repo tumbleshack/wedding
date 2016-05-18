@@ -18,8 +18,13 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
+ gulp.task('jekyll-develop', function (done) {
+     browserSync.notify(messages.jekyllBuild);
+     return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+         .on('close', done);
+ });
+
 gulp.task('jekyll-build', function (done) {
-    // browserSync.notify(messages.jekyllBuild);
     return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
@@ -34,7 +39,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass-develop', 'js-develop', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass-develop', 'js-develop', 'jekyll-develop'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -43,7 +48,7 @@ gulp.task('browser-sync', ['sass-develop', 'js-develop', 'jekyll-build'], functi
 });
 
 /**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
+ * Compile files from _scss
  */
 gulp.task('sass-develop', function () {
     return gulp.src('_sass/main.scss')
@@ -53,10 +58,9 @@ gulp.task('sass-develop', function () {
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(sourcemaps.write('./maps'))
+        .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('_site/css'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'));
+        .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('sass-build', function () {
@@ -69,49 +73,49 @@ gulp.task('sass-build', function () {
 });
 
 /**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
+ * Compile files from _js
  */
- gulp.task('js-develop', function () {
-     var bundler = browserify({
-         entries: '_js-es6/app.js',
-         debug: true
-     });
-     bundler.transform(babelify);
-
-     bundler.bundle()
-         .on('error', function (err) { console.error(err); })
-         .pipe(source('app.js'))
-         .pipe(buffer())
-         .pipe(sourcemaps.init({ loadMaps: true }))
-         .pipe(uglify()) // Use any gulp plugins you want now
-         .pipe(sourcemaps.write('./'))
-         .pipe(gulp.dest('_site/js'))
-         .pipe(browserSync.reload({stream:true}))
-         .pipe(gulp.dest('js'));
- });
-
-  gulp.task('js-build', function () {
-    var bundler = browserify({
-      entries: '_js-es6/app.js',
-      debug: true
-    });
-    bundler.transform(babelify);
-
-    bundler.bundle()
-      .pipe(source('app.js'))
-      .pipe(buffer())
-      .pipe(uglify()) // Use any gulp plugins you want now
-      .pipe(gulp.dest('_site/js'))
+gulp.task('js-develop', function () {
+  var bundler = browserify({
+    entries: '_js-es6/app.js',
+    debug: true
   });
+  bundler.transform(babelify);
+
+  bundler.bundle()
+    .on('error', function (err) { console.error(err); })
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('_site/js'))
+    .pipe(browserSync.reload({stream:true}));
+  }
+);
+
+gulp.task('js-build', function () {
+  var bundler = browserify({
+    entries: '_js-es6/app.js',
+    debug: true
+  });
+  bundler.transform(babelify);
+
+  bundler.bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('_site/js'))
+});
 
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch(['_js-es6/**/*.js'], ['js']);
-    gulp.watch(['_sass/**/*.scss'], ['sass']);
-    gulp.watch(['**/*.html', '**/*.markdown', '**/*.md'], ['jekyll-rebuild']);
+  gulp.watch(['_js-es6/**/*.js'], ['js']);
+  gulp.watch(['_sass/**/*.scss'], ['sass']);
+  gulp.watch(['**/*.html', '**/*.markdown', '**/*.md'], ['jekyll-rebuild']);
 });
 
 /**
