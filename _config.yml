@@ -21,3 +21,6 @@ incremental: true
 
 # exclude node_modules from jekyll generation
 exclude: [node_modules]
+
+# do not delete these folders when regenerating jekyll site
+keep_files: [_site/css, _site/js]
