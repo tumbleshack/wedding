@@ -25,14 +25,14 @@ var messages = {
  });
 
 gulp.task('jekyll-build', function (done) {
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+    return cp.spawn('jekyll-develop', ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
 
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-develop'], function () {
     browserSync.reload();
 });
 
@@ -113,8 +113,8 @@ gulp.task('js-build', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch(['_js-es6/**/*.js'], ['js']);
-  gulp.watch(['_sass/**/*.scss'], ['sass']);
+  gulp.watch(['_js-es6/**/*.js'], ['js-develop']);
+  gulp.watch(['_sass/**/*.scss'], ['sass-develop']);
   gulp.watch(['**/*.html', '**/*.markdown', '**/*.md'], ['jekyll-rebuild']);
 });
 
