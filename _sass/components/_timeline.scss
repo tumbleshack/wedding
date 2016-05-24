@@ -49,10 +49,11 @@
 .cd-timeline {
   position: relative;
   padding: 2rem 0;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 800px;
 
   @include mq($bp-small) {
-    margin: 3rem 0;
+    margin: 3rem auto;
   }
 
   &::before {
