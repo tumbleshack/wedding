@@ -1,7 +1,7 @@
 // Default primary nav behaviour
 .primary-nav {
   background: $light-color;
-  color: $dark-color;
+  color: $background-color;
   width: 100%;
   padding: 3rem 1rem;
   margin: 2rem -2rem;
@@ -42,43 +42,6 @@
   }
 }
 
-// Default large screen
-@include mq($bp-small) {
-
-  .nav-wrap {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .primary-nav-wrap {
-    max-height: 100%;
-  }
-
-  .primary-nav {
-    background: none;
-    margin-top: 0;
-
-    &__item {
-      display: inline-block;
-      width: auto;
-      margin-right: 2rem;
-
-      a {
-
-        color: $light-color;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-
-      .link-arrow {
-        display: none;
-      }
-    }
-  }
-}
-
 // JS enhanced menu
 
 .primary-nav-wrap {
@@ -110,7 +73,7 @@
 
 .nav-icon {
   position: absolute;
-  top: -0.35rem;
+  top: 2rem;
   right: 0;
   height: 5rem;
   width: 5rem;
@@ -155,7 +118,7 @@
 }
 
 .nav-icon.open span {
-  background-color: $dark-color;
+  background-color: $background-color;
 }
 
 .nav-icon.open span:nth-child(1) {
@@ -176,30 +139,4 @@
   top: 18px;
   width: 0%;
   left: 50%;
-}
-
-// Js enhanced large screen
-@include mq($bp-small) {
-
-  .js-nav-trigger {
-    display: none;
-  }
-
-  .primary-nav-wrap {
-    max-height: 100%;
-    position: relative;
-
-    .primary-nav {
-      padding-right: 0;
-      padding-top: 1rem;
-
-      &__item {
-        text-align: right;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
 }

@@ -1,5 +1,16 @@
-.hero-container {
+.hero-wrap {
   position: relative;
+  background-image: url('../banner-darver.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  .bg-tint {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($background-color, 0.75);
+  }
 }
 
 .hero-bg {
@@ -14,10 +25,6 @@
   overflow: hidden;
   z-index: -1;
   min-height: 75vh;
-
-  &.filter {
-    filter: blur(10px);
-  }
 }
 
 .hero {
