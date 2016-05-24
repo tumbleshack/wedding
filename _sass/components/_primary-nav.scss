@@ -35,6 +35,7 @@
     .link-arrow {
       position: relative;
       top: 2px;
+      color: $dark-color;
     }
 
     .is-selected {
@@ -119,7 +120,7 @@
 }
 
 .nav-icon.open span {
-  background-color: $background-color;
+  background-color: $dark-color;
 }
 
 .nav-icon.open span:nth-child(1) {

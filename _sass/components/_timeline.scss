@@ -22,7 +22,7 @@
     position: absolute;
     top: 0;
     left: 10px;
-    background: darken($light-color, 5%);
+    background: $dark-color;
 
     @include mq($bp-small) {
       left: 50%;
@@ -37,7 +37,7 @@
     position: absolute;
     bottom: 0;
     left: 9px;
-    background: darken($light-color, 5%);
+    background: $dark-color;
 
     @include mq($bp-small) {
       left: 50%;
@@ -63,7 +63,7 @@
     left: 18px;
     height: 100%;
     width: 4px;
-    background: darken($light-color, 5%);
+    background: $dark-color;
 
     @include mq($bp-small) {
       left: 50%;
@@ -105,7 +105,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: darken($light-color, 50%);
+  background: $dark-color;
 
   @include mq($bp-small) {
     width: 100px;

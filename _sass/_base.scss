@@ -33,7 +33,7 @@ ul {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $light-color;
+  color: $dark-color;
   background-color: $background-color;
   // These prefixes cannot be added via autoprefixer
   // scss-lint:disable VendorPrefix
