@@ -5,6 +5,7 @@
   background-position: center;
   background-size: cover;
   margin-top: 5rem;
+  margin-bottom: 5rem;
 
   &--one {
     background-image: url('../banner-lights.jpg');
@@ -20,5 +21,9 @@
 
   &--four {
     background-image: url('../banner-sign.jpg');
+  }
+
+  &--five {
+    background-image: url('../banner-lights.jpg');
   }
 }
