@@ -14,23 +14,28 @@
 }
 
 .hero {
+  background: rgba($light-color, 0.75);
+  color: $dark-color;
   margin: 0;
   font-family: $secondary-font-family;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  bottom: $spacing-unit * 15;
-  left: 0;
+  bottom: $spacing-unit * 10;
+  left: 50%;
+  margin-left: -250px;
+  padding: 4rem;
   width: 100%;
   justify-content: center;
   align-items: center;
   transition: opacity 3s;
+  max-width: 500px;
 
   &__txt {
     display: block;
     text-align: center;
-    color: $light-color;
+    letter-spacing: -1px;
 
     &--sm {
       font-size: 3rem;

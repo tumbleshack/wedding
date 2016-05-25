@@ -7,6 +7,8 @@
   &__link {
     border: 0;
     color: $light-color;
+    font-family: $secondary-font-family;
+    letter-spacing: -5px;
 
     &:hover {
       border: 0;
