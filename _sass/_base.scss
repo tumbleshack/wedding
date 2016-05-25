@@ -146,6 +146,7 @@ a {
 
   &:hover {
     color: darken($highlight-color, 10%);
-    border-bottom: 1px dotted darken($highlight-color, 10%);
+    border-bottom: 1px solid darken($highlight-color, 10%);
+    text-shadow: 0px 10px 10px $background-color;
   }
 }
