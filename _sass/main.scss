@@ -51,11 +51,3 @@ $bp-medium:    (calc($content-width + ($spacing-unit*2)));
   'components/hero',
   'components/img-banner';
 ;
-
-// Temp
-// scss-lint:disable IdSelector
-#rsvp {
-  // display: none;
-  max-width: 400px;
-  margin: 4rem auto;
-}
