@@ -23,8 +23,17 @@ body {
   padding-top: 2rem;
 }
 
+.section__image {
+  margin: 1rem auto 3rem;
+  display: block;
+}
+
 .for-large {
   display: none;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
 }
 
 .button {
