@@ -1,28 +1,35 @@
 .header {
-  padding: 0 0 $spacing-unit * 3;
-  margin: $spacing-unit * 1.5 0 $spacing-unit * 3;
+  padding: $spacing-unit * 1.5 0 $spacing-unit * 3;
+  margin: 0 0 $spacing-unit * 3;
   width: 100%;
   position: relative;
 
-  @include mq($bp-small) {
-    margin-top: 5rem;
-    padding-bottom: 0;
-
-    .column:first-child {
-      padding-left: 0;
-    }
-  }
-
   &__link {
     border: 0;
+    color: $light-color;
+    font-family: $secondary-font-family;
+    letter-spacing: -5px;
+    transition: 2.5s;
+    z-index: 10;
+    position: relative;
+
+    .js-nav-active & {
+      color: $dark-color;
+    }
 
     &:hover {
       border: 0;
     }
   }
 
+  .logo-plus {
+    position: relative;
+    top: -4px;
+  }
+
   &__title {
     font-size: 3rem;
+    padding: 0 2rem;
     text-transform: uppercase;
     display: block;
   }

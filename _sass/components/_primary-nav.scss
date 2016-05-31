@@ -1,7 +1,7 @@
 // Default primary nav behaviour
 .primary-nav {
   background: $light-color;
-  color: $dark-color;
+  color: $background-color;
   width: 100%;
   padding: 3rem 1rem;
   margin: 2rem -2rem;
@@ -34,47 +34,11 @@
     .link-arrow {
       position: relative;
       top: 2px;
+      color: $dark-color;
     }
 
     .is-selected {
       color: $grey-color;
-    }
-  }
-}
-
-// Default large screen
-@include mq($bp-small) {
-
-  .nav-wrap {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .primary-nav-wrap {
-    max-height: 100%;
-  }
-
-  .primary-nav {
-    background: none;
-    margin-top: 0;
-
-    &__item {
-      display: inline-block;
-      width: auto;
-      margin-right: 2rem;
-
-      a {
-
-        color: $light-color;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-
-      .link-arrow {
-        display: none;
-      }
     }
   }
 }
@@ -110,14 +74,15 @@
 
 .nav-icon {
   position: absolute;
-  top: -0.35rem;
-  right: 0;
+  top: 2rem;
+  right: 2rem;
   height: 5rem;
   width: 5rem;
   padding: 0 1rem;
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  z-index: 9;
 
   &__wrap {
     position: relative;
@@ -176,30 +141,4 @@
   top: 18px;
   width: 0%;
   left: 50%;
-}
-
-// Js enhanced large screen
-@include mq($bp-small) {
-
-  .js-nav-trigger {
-    display: none;
-  }
-
-  .primary-nav-wrap {
-    max-height: 100%;
-    position: relative;
-
-    .primary-nav {
-      padding-right: 0;
-      padding-top: 1rem;
-
-      &__item {
-        text-align: right;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
 }

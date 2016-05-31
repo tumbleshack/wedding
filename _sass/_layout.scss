@@ -12,15 +12,25 @@ body {
 .wrapper {
   max-width: $content-width;
   margin: auto;
-  padding: 0 2rem;
+  padding: 0 2rem 4rem;
+  position: relative;
 }
 
 .section__header {
   margin-bottom: 3rem;
+  text-align: left;
+  border-bottom: 2px solid $dark-color;
+  padding-top: 2rem;
 }
 
 .for-large {
   display: none;
+}
+
+.button {
+  margin: 3rem auto 3rem;
+  display: block;
+  max-width: 300px;
 }
 
 
@@ -45,6 +55,7 @@ body {
   padding-bottom: 75%; // This is the aspect ratio
   height: 0;
   overflow: hidden;
+  margin-bottom: 4rem;
 
   iframe {
     position: absolute;

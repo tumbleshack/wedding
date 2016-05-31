@@ -21,8 +21,8 @@
     height: 4px;
     position: absolute;
     top: 0;
-    left: 10px;
-    background: darken($light-color, 5%);
+    left: 28px;
+    background: $dark-color;
 
     @include mq($bp-small) {
       left: 50%;
@@ -36,8 +36,8 @@
     height: 4px;
     position: absolute;
     bottom: 0;
-    left: 9px;
-    background: darken($light-color, 5%);
+    left: 28px;
+    background: $dark-color;
 
     @include mq($bp-small) {
       left: 50%;
@@ -49,10 +49,11 @@
 .cd-timeline {
   position: relative;
   padding: 2rem 0;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 800px;
 
   @include mq($bp-small) {
-    margin: 3rem 0;
+    margin: 3rem auto;
   }
 
   &::before {
@@ -60,10 +61,10 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 18px;
+    left: 37px;
     height: 100%;
     width: 4px;
-    background: darken($light-color, 5%);
+    background: $dark-color;
 
     @include mq($bp-small) {
       left: 50%;
@@ -75,7 +76,7 @@
 .cd-timeline-block {
   @extend %clearfix;
   position: relative;
-  margin: 2em 1em 2em 2em;
+  margin: 2em 1em 2em 3em;
 
   @include mq($bp-small) {
     margin: 20rem 0;
@@ -101,11 +102,11 @@
 .cd-timeline-img {
   position: absolute;
   top: 10px;
-  left: -36px;
-  width: 40px;
-  height: 40px;
+  left: -55px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: darken($light-color, 50%);
+  background: $dark-color;
 
   @include mq($bp-small) {
     width: 100px;

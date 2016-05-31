@@ -33,7 +33,7 @@ ul {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $light-color;
+  color: $dark-color;
   background-color: $background-color;
   // These prefixes cannot be added via autoprefixer
   // scss-lint:disable VendorPrefix
@@ -52,6 +52,7 @@ h5,
 h6 {
   font-family: $secondary-font-family;
   text-align: center;
+  letter-spacing: -2px;
 }
 
 /**
@@ -78,7 +79,7 @@ ul {
  * Sections
  */
 section {
-  margin: 6rem 0;
+  margin: 6rem 0 0;
 }
 
 /**
@@ -145,6 +146,6 @@ a {
 
   &:hover {
     color: darken($highlight-color, 10%);
-    border-bottom: 1px dotted darken($highlight-color, 10%);
+    border-bottom: 1px solid darken($highlight-color, 10%);
   }
 }

@@ -1,6 +1,13 @@
 .footer {
-  border-top: 1px dotted $grey-color;
   font-size: $small-font-size;
-  padding-top: $spacing-unit * 3;
+  padding-top: 0;
   margin: $spacing-unit * 3 0;
+
+  .column {
+    margin-bottom: 0;
+  }
+
+  .footer__cta {
+    text-align: right;
+  }
 }
