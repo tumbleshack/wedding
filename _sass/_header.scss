@@ -9,10 +9,22 @@
     color: $light-color;
     font-family: $secondary-font-family;
     letter-spacing: -5px;
+    transition: 2.5s;
+    z-index: 10;
+    position: relative;
+
+    .js-nav-active & {
+      color: $dark-color;
+    }
 
     &:hover {
       border: 0;
     }
+  }
+
+  .logo-plus {
+    position: relative;
+    top: -4px;
   }
 
   &__title {

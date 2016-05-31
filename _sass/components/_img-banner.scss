@@ -1,29 +1,37 @@
 .img-banner {
-
-  height: 500px;
+  min-height: 400px;
+  height: 40vw;
   background-color: $light-color;
   background-position: center;
   background-size: cover;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  position: relative;
+
+  .bg-tint {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark-color, 0.5);
+  }
 
   &--one {
-    background-image: url('../banner-lights.jpg');
+    background-image: url('../banner-1.jpg');
   }
 
   &--two {
-    background-image: url('../banner-flowers.jpg');
+    background-image: url('../banner-2.jpg');
   }
 
   &--three {
-    background-image: url('../banner-drive.jpg');
+    background-image: url('../banner-3.jpg');
   }
 
   &--four {
-    background-image: url('../banner-sign.jpg');
+    background-image: url('../banner-4.jpg');
   }
 
   &--five {
-    background-image: url('../banner-lights.jpg');
+    background-image: url('../banner-5.jpg');
   }
 }
