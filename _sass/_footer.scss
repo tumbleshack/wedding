@@ -2,9 +2,17 @@
   font-size: $small-font-size;
   padding-top: 0;
   margin: $spacing-unit * 3 0;
+  display: block;
+  @extend %clearfix;
 
-  .column {
-    margin-bottom: 0;
+  &__left {
+    float: left;
+    width: 60%;
+  }
+
+  &__right {
+    float: left;
+    width: 30%;
   }
 
   .footer__cta {
