@@ -1,4 +1,10 @@
 // Default primary nav behaviour
+
+.primary-nav-wrap {
+  position: relative;
+  z-index: 9;
+}
+
 .primary-nav {
   background: $light-color;
   color: $background-color;
