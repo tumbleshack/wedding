@@ -134,11 +134,28 @@ p {
  */
 a {
   color: $highlight-color;
-  box-sizing: border-box;
-  transition: 0.75s all;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+
+  &:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
 
   &:hover {
-    color: darken($highlight-color, 10%);
-    border-bottom: 1px solid darken($highlight-color, 10%);
+
+    color: $highlight-color;
+
+    &:after {
+      width: 100%;
+      background: $highlight-color;
+    }
   }
 }

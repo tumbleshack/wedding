@@ -8,10 +8,14 @@
   left: 0;
   width: 100%;
   text-align: center;
+  color: $light-color;
 
-  &,
   a {
     color: $light-color;
+
+    &:hover:after {
+      background: $light-color;
+    }
   }
 
   &--inverse {
