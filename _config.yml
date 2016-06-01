@@ -24,3 +24,10 @@ exclude: [node_modules]
 
 # do not delete these folders when regenerating jekyll site
 keep_files: [_site/css, _site/js]
+
+# compress html
+compress_html:
+  clippings: all
+  comments:  ["<!-- ", " -->"]
+  endings:   all
+  blanklines: false
