@@ -25,6 +25,10 @@ export default function PrimaryNav() {
         primaryNavLink.onclick = function(){
             // toggle active class on the nav trigger
             navTrigger.classList.toggle("open");
+            // immediately hide the nav
+            primaryNav.style.opacity= "0";
+            // once drawer has had time to pull up, restore opacity
+            setTimeout(function() { primaryNav.style.opacity= "1"; }, 1000);
             // toggle the active class on site container
             container.classList.toggle("js-nav-active");
         };
