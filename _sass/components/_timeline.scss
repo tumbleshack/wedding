@@ -77,6 +77,7 @@
   @extend %clearfix;
   position: relative;
   margin: 2em 1em 2em 3em;
+  opacity: 0;
 
   @include mq($bp-small) {
     margin: 20rem 0;
