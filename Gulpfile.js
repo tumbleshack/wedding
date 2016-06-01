@@ -10,6 +10,7 @@ var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var cssmin = require('gulp-cssmin');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -69,6 +70,9 @@ gulp.task('sass-build', function () {
             includePaths: ['scss']
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(cssmin({
+          keepSpecialComments: 0
+        }))
         .pipe(gulp.dest('_site/css'));
 });
 
