@@ -12,10 +12,6 @@
 
   a {
     color: $light-color;
-
-    &:hover:after {
-      background: $light-color;
-    }
   }
 
   &--inverse {
@@ -23,6 +19,10 @@
     &,
     a {
       color: $highlight-color;
+    }
+
+    &:hover:after {
+      background: $highlight-color;
     }
   }
 }

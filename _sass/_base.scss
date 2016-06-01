@@ -149,6 +149,7 @@ a {
   }
 
   &:hover {
+    color: $highlight-color;
     &:after {
       width: 100%;
       color: $highlight-color;
