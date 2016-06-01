@@ -59,6 +59,16 @@ body {
 }
 
 // Responsive Google Maps Embed
+.overlay {
+   background: transparent;
+   position: relative;
+   width: 100%;
+   height: 600px; /* your iframe height */
+   top: 600px;  /* your iframe height */
+   margin-top: -600px;  /* your iframe height */
+   z-index: 9;
+}
+
 .google-maps {
   position: relative;
   padding-bottom: 75%; // This is the aspect ratio
