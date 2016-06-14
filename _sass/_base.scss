@@ -132,7 +132,7 @@ p {
 /**
  * Default Link styling
  */
-a {
+a:not(.button) {
   color: $highlight-color;
   display: inline-block;
   position: relative;
