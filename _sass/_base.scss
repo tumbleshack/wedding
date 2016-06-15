@@ -132,7 +132,7 @@ p {
 /**
  * Default Link styling
  */
-a:not(.button) {
+a {
   color: $highlight-color;
   display: inline-block;
   position: relative;
@@ -152,7 +152,7 @@ a:not(.button) {
 
   }
 
-  &:hover {
+  &:not(.button):hover {
     color: $highlight-color;
 
     &:before {
