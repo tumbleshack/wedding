@@ -21,7 +21,7 @@
       color: $highlight-color;
     }
 
-    &:hover:after {
+    &:hover::after {
       background: $highlight-color;
     }
   }

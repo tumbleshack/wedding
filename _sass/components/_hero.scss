@@ -28,18 +28,18 @@
   background-position: center 0;
   min-height: 100vh;
   margin-top: 0;
-  background-image: url(http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_4_3,c_fill__c_scale,w_750.jpg);
+  background-image: url('http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_4_3,c_fill__c_scale,w_750.jpg');
 
-  @media (min-width: 468px ){
-    background-image: url(http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_4_3,c_fill__c_scale,w_1302.jpg);
+  @media (min-width: 468px) {
+    background-image: url('http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_4_3,c_fill__c_scale,w_1302.jpg');
   }
 
-  @media (min-width: 960px ){
-    background-image: url(http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_16_9,c_fill__c_scale,w_1870.jpg);
+  @media (min-width: 960px) {
+    background-image: url('http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_16_9,c_fill__c_scale,w_1870.jpg');
   }
 
-  @media (min-width: 1200px ){
-    background-image: url(http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_16_9,c_fill__c_scale,w_1870.jpg);
+  @media (min-width: 1200px) {
+    background-image: url('http://cdn.brymge.net/img/b&g/hero_z8iyod_ar_16_9,c_fill__c_scale,w_1870.jpg');
   }
 
   .bg-tint {
@@ -48,6 +48,7 @@
     height: 100%;
     background: rgba($dark-color, 0.75);
   }
+
   .link-leader {
 
     a:hover {
