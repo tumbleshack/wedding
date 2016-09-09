@@ -31,3 +31,6 @@ compress_html:
   comments:  ["<!-- ", " -->"]
   endings:   all
   blanklines: false
+
+# fix cache error
+exclude: [vendor]
