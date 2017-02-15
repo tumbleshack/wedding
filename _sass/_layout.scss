@@ -9,6 +9,13 @@ body {
   max-width: 100%;
 }
 
+.strip {
+  background-color: $dark-color;
+  color: $light-color;
+  margin: 2rem 0;
+  padding: 4rem 0;
+}
+
 .wrapper {
   max-width: $content-width;
   margin: auto;
@@ -21,6 +28,10 @@ body {
   text-align: left;
   border-bottom: 2px solid $dark-color;
   padding-top: 2rem;
+
+  .strip & {
+    border-bottom: 1px solid $light-color;
+  }
 }
 
 .section__image {
