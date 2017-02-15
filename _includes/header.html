@@ -1,4 +1,8 @@
-<section class="hero-wrap link-leader-container" id="top">
+{% if page.url == "/pre-wedding.html" %}
+    <section class="hero-wrap link-leader-container" id="top">
+{% else %}
+    <section class="hero-wrap hero-wrap--review link-leader-container" id="top">
+{% endif %}
 
     <div class="bg-tint"></div>
 
@@ -20,30 +24,56 @@
 
           <div class="nav-wrap">
 
-              <div class="primary-nav__item">
-                  <a href="#schedule">Schedule</a>
-                  <span class="link-arrow">&rarr;</span>
-              </div>
+                {% if page.url == "/pre-wedding.html" %}
+                <div class="primary-nav__item">
+                    <a href="#schedule">Schedule</a>
+                    <span class="link-arrow">&rarr;</span>
+                </div>
+                <div class="primary-nav__item">
+                    <a href="#location">Location</a>
+                    <span class="link-arrow">&rarr;</span>
+                </div>
+                <div class="primary-nav__item">
+                    <a href="#accomodation">Accomodation</a>
+                    <span class="link-arrow">&rarr;</span>
+                </div>
+                <div class="primary-nav__item">
+                    <a href="#after-party">After-party</a>
+                    <span class="link-arrow">&rarr;</span>
+                </div>
 
-              <div class="primary-nav__item">
-                  <a href="#location">Location</a>
-                  <span class="link-arrow">&rarr;</span>
-              </div>
+                <div class="primary-nav__item">
+                    <a href="#rsvp">RSVP</a>
+                    <span class="link-arrow">&rarr;</span>
+                </div>
 
-              <div class="primary-nav__item">
-                  <a href="#accomodation">Accomodation</a>
-                  <span class="link-arrow">&rarr;</span>
-              </div>
+                {% else %}
+                    <div class="primary-nav__item">
+                        <a href="#video">The video highlights</a>
+                        <span class="link-arrow">&rarr;</span>
+                    </div>
 
-              <div class="primary-nav__item">
-                  <a href="#after-party">After-party</a>
-                  <span class="link-arrow">&rarr;</span>
-              </div>
+                    <div class="primary-nav__item">
+                        <a href="#photos">The photo highlights</a>
+                        <span class="link-arrow">&rarr;</span>
+                    </div>
 
-              <div class="primary-nav__item">
-                  <a href="#rsvp">RSVP</a>
-                  <span class="link-arrow">&rarr;</span>
-              </div>
+                    <!-- <div class="primary-nav__item">
+                        <a href="">The Bridesmaid's poem</a>
+                        <span class="link-arrow">&rarr;</span>
+                    </div> -->
+
+
+                    <hr>
+
+                    <div class="primary-nav__item">
+                      <a href="/pre-wedding.html">Archived pre-wedding site</a>
+                      <span class="link-arrow">&rarr;</span>
+                    </div>
+                {% endif %}
+
+
+
           </div>
         </nav>
       </div>

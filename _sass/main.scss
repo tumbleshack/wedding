@@ -36,9 +36,13 @@ $bp-medium:    (calc($content-width + ($spacing-unit*2)));
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+  // Vendor
+  'vendor/photoswipe/main',
+  'vendor/photoswipe/default-skin/main',
   // Utils
   'utils/visually-hidden',
   'utils/animations',
+  'utils/media-object',
   // Scaffolding
   'milligram',
   'base',
@@ -50,5 +54,6 @@ $bp-medium:    (calc($content-width + ($spacing-unit*2)));
   'components/timeline',
   'components/hero',
   'components/img-banner',
-  'components/link-leader';
+  'components/link-leader',
+  'components/gallery';
 ;
