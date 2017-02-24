@@ -1,8 +1,15 @@
-{% if page.url == "/pre-wedding.html" %}
+{% if page.slug == "pre" %}
     <section class="hero-wrap link-leader-container" id="top">
-{% else %}
+{% endif %}
+
+{% if page.slug == "review" %}
     <section class="hero-wrap hero-wrap--review link-leader-container" id="top">
 {% endif %}
+
+{% if page.slug == "poem" %}
+    <section class="hero-wrap hero-wrap--poem link-leader-container" id="top">
+{% endif %}
+
 
     <div class="bg-tint"></div>
 
@@ -58,10 +65,10 @@
                         <span class="link-arrow">&rarr;</span>
                     </div>
 
-                    <!-- <div class="primary-nav__item">
-                        <a href="">The Bridesmaid's poem</a>
+                    <div class="primary-nav__item">
+                        <a href="/bridesmaid-poem.html">The Bridesmaid's poem</a>
                         <span class="link-arrow">&rarr;</span>
-                    </div> -->
+                    </div>
 
 
                     <hr>
