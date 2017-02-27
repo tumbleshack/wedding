@@ -104,3 +104,23 @@ body {
     height: 100% !important;
   }
 }
+
+// Gallery
+.gallery__item img {
+  border: 1px solid $grey-color;
+}
+
+.note {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  background: $light-color;
+
+
+  &, a {
+    color: $dark-color!important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
