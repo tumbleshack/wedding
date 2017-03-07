@@ -161,3 +161,14 @@ a {
     }
   }
 }
+
+// Gallery Share links
+.pswp__share-tooltip a:hover {
+  color: #333!important;
+  background-color: white;
+  text-decoration: underline;
+}
+
+.pswp__share-tooltip a:before {
+  display: none!important;
+}
