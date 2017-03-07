@@ -11,8 +11,6 @@ PrimaryNav();
 import TimelineLoading from './modules/timeline-loading';
 TimelineLoading();
 
-
-
 // Photoswipe
   var initPhotoSwipeFromDOM = function(gallerySelector) {
 
