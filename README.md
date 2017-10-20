@@ -1,6 +1,6 @@
 # barryandgillian.wedding
 
-This is the repo for our wedding website, which took plave on 29 Sept 2016.
+This is the repo for our wedding website, which took place on 29 Sept 2016.
 
 ## Getting started
 
