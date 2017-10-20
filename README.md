@@ -1,9 +1,6 @@
 # barryandgillian.wedding
 
-[![Stories in Ready](https://badge.waffle.io/barrymcgee/barryandgillian.wedding.png?label=ready&title=Ready)](https://waffle.io/barrymcgee/barryandgillian.wedding)
-[![Known Vulnerabilities](https://snyk.io/test/npm/name/badge.svg)](https://snyk.io/test/npm/name)
-
-This is the repo for our wedding website
+This is the repo for our wedding website, which took plave on 29 Sept 2016.
 
 ## Getting started
 
