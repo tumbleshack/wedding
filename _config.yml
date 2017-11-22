@@ -7,7 +7,7 @@
 
 # Site settings
 description: > # this means to ignore newlines until "baseurl:"
-    We're getting married on 29th September 2016!
+  We're getting married on 29th September 2016!
 
 baseurl: "" # the subpath of your site, e.g. /blog
 
@@ -20,10 +20,10 @@ markdown: kramdown
 incremental: true
 
 # exclude node_modules from jekyll generation
-exclude: [node_modules]
+exclude: [node_modules, Gulpfile.js, package.json, package-lock.json, README.md, logo.sketch, Gemfile, Gemfile.lock]
 
 # do not delete these folders when regenerating jekyll site
-keep_files: [_site/css, _site/js]
+keep_files: [css, js]
 
 # compress html
 compress_html:
@@ -31,6 +31,3 @@ compress_html:
   comments:  ["<!-- ", " -->"]
   endings:   all
   blanklines: false
-
-# fix cache error
-exclude: [vendor]
