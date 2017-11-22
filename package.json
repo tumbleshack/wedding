@@ -35,9 +35,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "browser-sync": "^2.11.1",
-    "gulp-sourcemaps": "^2.4.0"
-  },
-  "devDependencies": {
+    "gulp-sourcemaps": "^2.4.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
   }
