@@ -4,7 +4,9 @@
   "description": "Codebase for https://barryandgillian.wedding",
   "main": "_site/index.html",
   "scripts": {
-    "test": "htmlproofer ./_site --only-4xx --check-html && bundle exec jekyll build && scss-lint ./_sass/**/*.scss"
+    "test": "htmlproofer ./_site --only-4xx --check-html && bundle exec jekyll build && scss-lint ./_sass/**/*.scss && eslint _js-es6",
+    "build": "gulp jekyll-build",
+    "postbuild": "gulp sass-build && gulp js-build"
   },
   "repository": {
     "type": "git",
