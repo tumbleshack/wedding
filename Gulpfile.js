@@ -9,6 +9,7 @@ var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
+var imagemin = require('gulp-imagemin');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -103,6 +104,15 @@ gulp.task('js-build', function () {
     .pipe(buffer())
     .pipe(gulp.dest('_site/js'))
 });
+
+/**
+ * Copy and compress any site images
+ */
+ gulp.task('copy-images', () =>
+     gulp.src('images/**/*.{jpg,png,svg}')
+         .pipe(imagemin())
+         .pipe(gulp.dest('_site/images'))
+ );
 
 /**
  * Watch scss files for changes & recompile
