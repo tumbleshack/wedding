@@ -5,6 +5,7 @@
   "main": "_site/index.html",
   "scripts": {
     "test": "htmlproofer ./_site --only-4xx --check-html && bundle exec jekyll build && scss-lint ./_sass/**/*.scss && eslint _js-es6",
+    "prebuild": "gulp copy-images",
     "build": "gulp build",
     "serve": "gulp"
   },
