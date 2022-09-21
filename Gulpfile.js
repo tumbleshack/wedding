@@ -1,6 +1,6 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
+var sass        = require('gulp-sass')(require('node-sass'));
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var sourcemaps = require('gulp-sourcemaps');
@@ -8,7 +8,6 @@ var babelify = require('babelify');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
-var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
 
 var messages = {
@@ -23,29 +22,6 @@ var messages = {
      return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
          .on('close', done);
  });
-
-gulp.task('jekyll-build', function (done) {
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-        .on('close', done);
-});
-
-/**
- * Rebuild Jekyll & do page reload
- */
-gulp.task('jekyll-rebuild', ['jekyll-develop'], function () {
-    browserSync.reload();
-});
-
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['sass-develop', 'js-develop', 'jekyll-develop'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        }
-    });
-});
 
 /**
  * Compile files from _scss
@@ -63,6 +39,49 @@ gulp.task('sass-develop', function () {
         .pipe(browserSync.reload({stream:true}));
 });
 
+/**
+ * Compile files from _js
+ */
+ gulp.task('js-develop', function () {
+    var bundler = browserify({
+      entries: '_js-es6/app.js',
+      debug: true
+    });
+    bundler.transform(babelify);
+
+    return bundler.bundle()
+      .on('error', function (err) { console.error(err); })
+      .pipe(source('app.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('_site/js'))
+      .pipe(browserSync.reload({stream:true}));
+  });
+
+gulp.task('jekyll-build', function (done) {
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+/**
+ * Rebuild Jekyll & do page reload
+ */
+gulp.task('jekyll-rebuild', gulp.series('jekyll-develop'), function () {
+    browserSync.reload();
+});
+
+/**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('browser-sync', gulp.series('sass-develop', 'js-develop', 'jekyll-develop'), function() {
+    browserSync({
+        server: {
+            baseDir: '_site'
+        }
+    });
+});
+
 gulp.task('sass-build', function () {
     return gulp.src('_sass/main.scss')
         .pipe(sass({
@@ -72,37 +91,20 @@ gulp.task('sass-build', function () {
         .pipe(gulp.dest('_site/css'));
 });
 
-/**
- * Compile files from _js
- */
-gulp.task('js-develop', function () {
+
+
+gulp.task('js-build', function (done) {
   var bundler = browserify({
     entries: '_js-es6/app.js',
     debug: true
   });
+
   bundler.transform(babelify);
 
-  bundler.bundle()
-    .on('error', function (err) { console.error(err); })
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('_site/js'))
-    .pipe(browserSync.reload({stream:true}));
-});
-
-gulp.task('js-build', function () {
-  var bundler = browserify({
-    entries: '_js-es6/app.js',
-    debug: true
-  });
-  bundler.transform(babelify);
-
-  bundler.bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(gulp.dest('_site/js'))
+    return bundler.bundle()
+        .pipe(source('app.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('_site/js'))
 });
 
 /**
@@ -119,18 +121,18 @@ gulp.task('js-build', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch(['_js-es6/**/*.js'], ['js-develop']);
-  gulp.watch(['_sass/**/*.scss'], ['sass-develop']);
-  gulp.watch(['**/*.html', '**/*.markdown', '**/*.md'], ['jekyll-rebuild']);
+  gulp.watch(['_js-es6/**/*.js'], gulp.series('js-develop'));
+  gulp.watch(['_sass/**/*.scss'], gulp.series('sass-develop'));
+  gulp.watch(['**/*.html', '**/*.markdown', '**/*.md'], gulp.series('jekyll-rebuild'));
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.series('browser-sync', 'watch'));
 
 /**
  * Gulp 'build' task which is used to build the site on the production box.
  */
-gulp.task('build', ['jekyll-build', 'sass-build', 'js-build']);
+gulp.task('build', gulp.series('copy-images', 'jekyll-build', 'sass-build', 'js-build'));
