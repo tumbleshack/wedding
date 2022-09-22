@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x]
     
     steps:
     - uses: actions/checkout@v3
@@ -26,6 +26,7 @@ jobs:
       run: |
         npm install
         gulp build
+        bundle install
         
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
