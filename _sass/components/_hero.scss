@@ -28,37 +28,37 @@
   background-position: center 0;
   min-height: 100vh;
   margin-top: 0;
-  background-image: url('/images/b&g/hero_z8iyod_ar_4_3,c_fill__c_scale,w_750.jpg');
+  background-image: url('../images/us/hero-al.jpg');
 
   @media (min-width: 468px) {
-    background-image: url('/images/b&g/hero_z8iyod_ar_4_3,c_fill__c_scale,w_1302.jpg');
+    background-image: url('../images/us/hero-al.jpg');
   }
 
   @media (min-width: 960px) {
-    background-image: url('/images/b&g/hero_z8iyod_ar_16_9,c_fill__c_scale,w_1870.jpg');
+    background-image: url('../images/us/hero-al.jpg');
   }
 
   &--review {
-    background-image: url('/images/b&g/Gillian_Barry335_chfc4u_c_scale,w_712.jpg');
+    background-image: url('../images/b&g/Gillian_Barry335_chfc4u_c_scale,w_712.jpg');
 
     @media (min-width: 1200px) {
-      background-image: url('/images/b&g/Gillian_Barry335_chfc4u_c_scale,w_1400.jpg');
+      background-image: url('../images/b&g/Gillian_Barry335_chfc4u_c_scale,w_1400.jpg');
     }
   }
 
   &--poem {
-    background-image: url('/images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_498.jpg');
+    background-image: url('../images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_498.jpg');
 
     @media (min-width: 468px) {
-      background-image: url('/images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_717.jpg');
+      background-image: url('../images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_717.jpg');
     }
 
     @media (min-width: 960px) {
-      background-image: url('/images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_913.jpg');
+      background-image: url('../images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_913.jpg');
     }
 
     @media (min-width: 1200px) {
-      background-image: url('/images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_1400.jpg');
+      background-image: url('../images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_1400.jpg');
     }
   }
 
@@ -66,7 +66,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba($dark-color, 0.75);
+    background: rgba($dark-color, 0.30);
   }
 
   .link-leader {
@@ -78,7 +78,7 @@
 }
 
 .hero {
-  background: rgba($light-color, 0.65);
+  background: rgba($light-color, 0.80);
   color: $dark-color;
   margin: auto;
   font-family: $secondary-font-family;
@@ -87,8 +87,10 @@
   width: 90%;
   transition: opacity 3s;
   max-width: 500px;
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 
   &__cta {
     width: 100%;
@@ -103,14 +105,15 @@
 
 
     &--sm {
-      font-size: 2rem;
+      font-size: 1.6rem;
       line-height: 1.5;
     }
 
     &--lrg {
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 1.1;
       margin-bottom: 1.5rem;
+      font-weight: 500;
     }
   }
 }
