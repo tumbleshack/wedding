@@ -21,12 +21,14 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-
+    - name: Use Ruby
+      uses: actions/setup-ruby@v1
+      
     - name: Build
       run: |
+        bundle install
         npm install
         gulp build
-        bundle install
         
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
