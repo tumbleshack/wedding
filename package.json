@@ -1,7 +1,7 @@
 {
-  "name": "barryandgillian.wedding",
+  "name": "togethermoore.nl",
   "version": "0.0.1",
-  "description": "Codebase for https://barryandgillian.wedding",
+  "description": "Codebase for https://togethermoore.nl",
   "main": "_site/index.html",
   "scripts": {
     "test": "htmlproofer ./_site --only-4xx && bundle exec jekyll build && scss-lint ./_sass/**/*.scss && eslint _js-es6",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/barrymcgee/barryandgillian.wedding"
+    "url": "https://github.com/tumbleshack/wedding"
   },
-  "author": "Barry McGee <barry.mcgee@integralcode.co.uk>",
+  "author": "McKay Moore & Barry McGee <barry.mcgee@integralcode.co.uk>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/barrymcgee/barryandgillian.wedding/issues"
+    "url": "https://github.com/tumbleshack/tumbleshack/wedding"
   },
-  "homepage": "https://barryandgillian.wedding",
+  "homepage": "https://togethermoore.nl",
   "dependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.19.1",
