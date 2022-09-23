@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
     
     - name: Use Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
     
