@@ -20,11 +20,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: package-lock.json
     - run: npm ci
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.7'
+        ruby-version: '2.7.2p137'
         bundler-cache: true
     - run: bundle install
     - run: gulp build
