@@ -2163,6 +2163,7 @@ body {
   background-position: center 0;
   min-height: 100vh;
   margin-top: 0;
+  margin-bottom: 3rem;
   background-image: url("../images/us/hero-al.jpg"); }
   @media (min-width: 468px) {
     .hero-wrap {
