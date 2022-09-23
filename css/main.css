@@ -1732,7 +1732,7 @@ body {
 .wrapper {
   max-width: 800px;
   margin: auto;
-  padding: 0 2rem 4rem;
+  padding: 2rem 2rem 4rem;
   position: relative; }
 
 .section__header {
@@ -1981,7 +1981,7 @@ body {
   left: 50%; }
 
 .cd-container {
-  margin: 10rem auto; }
+  margin: 10rem auto 5rem; }
 
 .cd-date {
   display: block;
@@ -2233,7 +2233,7 @@ body {
   background-color: #f8f8ff;
   background-position: center;
   background-size: cover;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   position: relative;
   overflow: hidden; }
