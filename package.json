@@ -22,6 +22,7 @@
   },
   "homepage": "https://togethermoore.nl",
   "dependencies": {
+    "@actions/cache": "^3.0.4",
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
