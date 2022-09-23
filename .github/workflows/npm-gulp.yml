@@ -2,7 +2,7 @@ name: NodeJS with Gulp
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "ci" ]
   pull_request:
     branches: [ "master" ]
 
@@ -16,21 +16,16 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Use Ruby
-      uses: actions/setup-ruby@v1
-      
-    - name: Build
-      run: |
-        bundle install
-        npm install
-        gulp build
-        
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+        cache: 'npm'
+    - run: npm ci
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.7.2'
+        bundler-cache: true
+    - run: gulp build
+    - uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: _site # The folder the action should deploy.

@@ -20,7 +20,7 @@ markdown: kramdown
 incremental: true
 
 # exclude node_modules from jekyll generation
-exclude: [node_modules, Gulpfile.js, package.json, package-lock.json, README.md, logo.sketch, Gemfile, Gemfile.lock, images]
+exclude: [node_modules, Gulpfile.js, package.json, package-lock.json, README.md, logo.sketch, Gemfile, Gemfile.lock, images, vendor/bundle/, vendor/cache/, vendor/gems/, vendor/ruby/]
 
 # do not delete these folders when regenerating jekyll site
 keep_files: [css, js, images]
