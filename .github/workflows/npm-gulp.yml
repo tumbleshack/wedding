@@ -22,18 +22,11 @@ jobs:
         cache: 'npm'
         cache-dependency-path: package-lock.json
     - run: npm ci
-    
-    - name: Use Ruby
-      uses: ruby/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '2.7'
         bundler-cache: true
-    
-    - name: Gulp Build
-      run: |
-        gulp build
-        
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+    - run: gulp build
+    - uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: _site # The folder the action should deploy.
