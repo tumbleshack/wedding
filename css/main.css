@@ -2285,3 +2285,6 @@ body {
     .gallery__item:before {
       border-bottom: 0;
       background-color: transparent; }
+
+.survey-frame {
+  height: 600px; }
