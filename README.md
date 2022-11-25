@@ -1,23 +1,34 @@
-# barryandgillian.wedding
+# McKay and Lily's Wedding
 
-This is the repo for our wedding website, which took place on 29 Sept 2016.
+## Toolchain
 
-## Getting started
+1. Install gulp
+```
+$ npm install -g gulp
+```
 
-`yarn i`
+2. Install node modules (watch out)
+```
+$ npm install
+```
 
-...will install all local dependencies.
+3. Install gems
+```
+$ bundle
+```
 
-To fire up a local server while watching the site for changes just run;
+## Debug Environment
 
-`yarn serve`
+By default, gulp will run browser sync and watch.
+```
+$ gulp
+```
 
-...your browser of choice should open a new window and run the site at;
+## Production Build
+```
+$ gulp build
+```
 
-`http://localhost:3000`
+## Deploy
 
-## Running tests locally
-
-To run test locally, simply run;
-
-`yarn test`
+Any pushes to the master branch (including PR's), will trigger a github action which deploys the site.
