@@ -1438,8 +1438,7 @@ ol {
   list-style: decimal inside; }
 
 dt,
-dd,
-li {
+dd {
   margin-bottom: 1rem; }
 
 .button,
@@ -1646,7 +1645,7 @@ figcaption {
  */
 ol,
 ul {
-  margin: 4rem 2rem;
+  margin: 2rem 2rem;
   list-style: outside; }
 
 li > ol,
