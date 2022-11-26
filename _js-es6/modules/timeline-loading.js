@@ -1,6 +1,6 @@
 export default function TimelineLoading() {
 
-var timelineBlocks = document.querySelectorAll(".cd-timeline-block");
+  var timelineBlocks = document.querySelectorAll(".cd-timeline-block, .cgd-timeline-block");
 
   Array.prototype.forEach.call(timelineBlocks, function(el, i){
 
