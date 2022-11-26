@@ -1,0 +1,122 @@
+.cgd-container {
+  margin: 10rem auto 5rem;
+
+  &::after {
+    @extend %clearfix;
+  }
+}
+
+.cgd-date {
+  display: block;
+  float: none;
+  width: 100%;
+}
+
+.cgd-container {
+  position: relative;
+
+  &::before {
+    content: ' ';
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 28px;
+    background: $dark-color;
+  }
+
+  &::after {
+    content: ' ';
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 28px;
+    background: $dark-color;
+  }
+}
+
+.cgd-timeline {
+  position: relative;
+  padding: 2rem 0 4rem;
+  margin: 2rem auto;
+  max-width: 800px;
+
+  &::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 37px;
+    height: 100%;
+    width: 4px;
+    background: $dark-color;
+  }
+}
+
+.cgd-timeline-block {
+  @extend %clearfix;
+  position: relative;
+  margin: 2em 1em 2em 3em;
+  opacity: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cgd-timeline-img {
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: $dark-color;
+
+  img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -24px;
+    margin-top: -24px;
+  }
+
+  h6 {
+    color: $light-color;
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -24px;
+    margin-top: -26px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+}
+
+.cgd-timeline-content {
+  @extend %clearfix;
+  position: relative;
+  margin-left: 60px;
+  padding: 1em 0;
+
+  h3 {
+    text-align: left;
+  }
+
+  .cgd-date {
+    float: left;
+    padding: 0 0 0.8em;
+    opacity: 0.7;
+  }
+}
