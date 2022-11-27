@@ -1478,6 +1478,10 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }
+  @media (max-width: 450px) {
+    th:last-child,
+    td:last-child {
+      visibility: hidden; } }
 
 p {
   margin-top: 0; }
