@@ -2112,7 +2112,7 @@ body {
         position: absolute;
         width: 100%;
         left: 130%;
-        top: 4rem; }
+        top: .4rem; }
       .cd-timeline-block:nth-child(even) .cd-timeline-content {
         float: right;
         padding: 0 0 0 3rem; }
