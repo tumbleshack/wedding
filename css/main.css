@@ -1633,7 +1633,8 @@ ul {
  */
 img {
   max-width: 100%;
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 100%; }
 
 /**
  * Figures
@@ -2330,7 +2331,6 @@ body {
       font-weight: 500; }
 
 .img-banner {
-  min-height: 175px;
   height: 40vw;
   background-color: #f8f8ff;
   background-position: center;
