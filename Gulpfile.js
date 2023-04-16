@@ -110,11 +110,18 @@ gulp.task('js-build', function (done) {
 /**
  * Copy and compress any site images
  */
- gulp.task('copy-images', () =>
+ gulp.task('copy-photos', () =>
      gulp.src('images/**/*.{jpg,png,svg}')
          .pipe(imagemin())
          .pipe(gulp.dest('_site/images'))
  );
+
+ gulp.task('copy-videos', () =>
+     gulp.src('images/video/*.mp4')
+         .pipe(gulp.dest('_site/images/video'))
+ );
+
+ gulp.task('copy-images', gulp.parallel('copy-photos', 'copy-videos'))
 
 /**
  * Watch scss files for changes & recompile
