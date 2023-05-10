@@ -2278,6 +2278,8 @@ body {
         background-image: url("../images/b&g/Gillian_Barry335_chfc4u_c_scale,w_1400.jpg"); } }
   .hero-wrap--guide {
     background-image: url("../images/delft/hero.jpg"); }
+  .hero-wrap--ov {
+    background-image: url("../images/delft/trein.jpg"); }
   .hero-wrap--poem {
     background-image: url("../images/b&g/Gillian_Barry355_lpvpfw_c_scale,w_498.jpg"); }
     @media (min-width: 468px) {
