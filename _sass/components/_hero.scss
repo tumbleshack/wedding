@@ -56,7 +56,11 @@
   }
 
   &--post {
-    background-image: url('../images/delft/trein.jpg');
+    background-image: url('../images/us/post-hero.jpg');
+
+    @media (min-width: 75vh) {
+      background-image: url('../images/us/hero-al.jpg');
+    }
   }
 
   &--poem {
