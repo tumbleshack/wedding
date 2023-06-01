@@ -1,22 +1,84 @@
+
+// BASIC
+
 .gallery {
- display: flex;
- flex-wrap: wrap;
-
- &__item {
-   margin: .5rem;
-   width: calc(50% - 1rem);
-
-   @include mq($bp-small) {
-     width: calc(25% - 1rem);
-   }
-
-   img {
-      width: 100%;
-   }
-
-   &:before {
-      border-bottom: 0;
-      background-color: transparent;
-   }
- }
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.gallery__item {
+  height: 20vh;
+  flex-grow: 1;
+}
+
+.gallery__item:last-child {
+  // There's no science in using "10" here. In all my testing, this de.gallery__itemvered the best res.galleryts.
+  flex-grow: 10;
+}
+
+.gallery__image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  padding: .7rem;
+}
+
+// ADVANCED
+
+// Portrait
+
+@media (max-aspect-ratio: 1/1) {
+  .gallery__item {
+    height: 25vh;
+  }
+}
+
+// Short screens
+
+@media (max-height: 480px) {
+  .gallery__item {
+    height: 80vh;
+  }
+}
+
+// Smaller screens in portrait
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .gallery {
+    flex-direction: row;
+  }
+
+  .gallery__item {
+    height: auto;
+    width: 100%;
+  }
+  .gallery__image {
+    width: 100%;
+    max-height: 45vh;
+    min-width: 0;
+  }
+}
+
+// .gallery {
+//  display: flex;
+//  flex-wrap: wrap;
+
+//  &__item {
+//    margin: .5rem;
+//    width: calc(50% - 1rem);
+
+//    @include mq($bp-small) {
+//      width: calc(25% - 1rem);
+//    }
+
+//    .gallery__image {
+//       width: 100%;
+//    }
+
+//    &:before {
+//       border-bottom: 0;
+//       background-color: transparent;
+//    }
+//  }
+// }

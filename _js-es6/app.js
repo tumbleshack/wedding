@@ -32,6 +32,10 @@ TimelineLoading();
                 continue;
               }
 
+              if (el.getAttribute('no-gallery')) {
+                continue;
+              }
+
               childElements = el.children;
 
               size = el.getAttribute('data-size').split('x');
@@ -160,25 +164,29 @@ TimelineLoading();
           // define options (if needed)
           options = {
 
-              galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
-              getThumbBoundsFn: function(index) {
-                  // See Options->getThumbBoundsFn section of docs for more info
-                  var thumbnail = items[index].el.children[0],
-                      pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                      rect = thumbnail.getBoundingClientRect();
+            getThumbBoundsFn: function(index) {
+                // See Options->getThumbBoundsFn section of docs for more info
+                var thumbnail = items[index].el.children[0],
+                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    rect = thumbnail.getBoundingClientRect();
 
-                  return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-              },
+                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+            },
 
-              addCaptionHTMLFn: function(item, captionEl, isFake) {
-                  if(!item.title) {
-                      captionEl.children[0].innerText = '';
-                      return false;
-                  }
-                  captionEl.children[0].innerHTML = item.title +  '<br/><small>Photo: ' + item.author + '</small>';
-                  return true;
-              }
+            addCaptionHTMLFn: function(item, captionEl, isFake) {
+                if(!item.title) {
+                    captionEl.children[0].innerText = '';
+                    return false;
+                }
+                captionEl.children[0].innerHTML = item.title +  '<br/><small>Photo: ' + item.author + '</small>';
+                return true;
+            },
+
+            shareButtons: [
+                {id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
+            ]
 
           };
 
